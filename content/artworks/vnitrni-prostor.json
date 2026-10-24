@@ -2,28 +2,28 @@
   "id": "vnitrni-prostor",
   "slug": "vnitrni-prostor",
   "code": "VM-04",
-  "title": "VnitĹ™nĂ­ prostor",
-  "subtitle": "SvÄ›telnĂˇ refrakce",
+  "title": "Archa – Rituální schránka",
+  "subtitle": "Reliéfní kamenné těleso",
   "year": 2024,
-  "category": "steel-glass",
-  "material": "TavenĂ© hutnĂ­ sklo v kouĹ™ovĂ©m tĂłnu, kouĹ™ovĂ˝ dubovĂ˝ masiv",
+  "category": "stone",
+  "material": "Hloubkově tesaný vápenec, jemný pískový reliéf",
   "dimensions": {
-    "height": 54,
-    "width": 38,
-    "depth": 32,
-    "weight": 26
+    "height": 48,
+    "width": 42,
+    "depth": 36,
+    "weight": 42
   },
-  "description": "OptickĂ˝ monolit z tavenĂ©ho skla usazenĂ˝ do hluboce kartĂˇÄŤovanĂ©ho dubovĂ©ho dĹ™eva. SvÄ›tlo prochĂˇzejĂ­cĂ­ sklenÄ›nĂ˝m jĂˇdrem vrhĂˇ na okolnĂ­ stÄ›ny promÄ›nlivĂ© prismatickĂ© odlesky.",
-  "curatorNote": "PrĂˇce realizovanĂˇ ve spoluprĂˇci se sklĂˇĹ™skĂ˝mi mistry v Ĺ˝eleznĂ©m BrodÄ›.",
+  "description": "Masivní kamenné těleso zkoumající prostor jako vnitřní schránku a útočiště. Vnější plášť nese lineární reliéfní rytmus připomínající archaické architektonické prvky a symboly paměti.",
+  "curatorNote": "Práce zkoumající pomezí užité formy a autonomní skulptury. Určeno jako dominantní solitér pro solitérní podstavec či konzoli.",
   "status": "available",
   "priceMode": "fixed",
-  "price": "165 000 KÄŤ",
+  "price": "145 000 Kč",
   "heroImage": "/images/artworks/vnitrni-prostor.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/vnitrni-prostor.jpg",
-      "alt": "VnitĹ™nĂ­ prostor - celkový pohled",
-      "label": "Celkový pohled"
+      "alt": "Archa - pohled na reliéf",
+      "label": "Pohled na reliéf"
     }
   ],
   "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-reflection-of-light-on-a-museum-sculpture-41484-large.mp4",

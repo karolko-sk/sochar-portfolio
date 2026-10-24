@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 import { Artwork } from '@/types';
 
 interface HeroProps {
@@ -25,8 +25,8 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
 
             <p className="text-base sm:text-lg text-[#666560] font-light leading-relaxed max-w-xl">
               Sochy vznikající z dialogu mezi surovou zemitostí patinovaného bronzu,
-              krystalickou čistotou mramoru a tekutou refrakcí hutního skla. Každá
-              plastika je vytvořena jako solitér pro soukromé sbírky i veřejnou architekturu.
+              krystalickou čistotou mramoru a tekutou formou kamene. Každá
+              plastika je vytvořena jako unikátní autorský solitér pro soukromé sbírky i veřejnou architekturu.
             </p>
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                   Materiály
                 </span>
                 <span className="font-medium text-[#121214] mt-0.5 block">
-                  Bronz, Mramor, Ocel
+                  Bronz, Mramor, Kámen
                 </span>
               </div>
               <div>
@@ -83,9 +83,9 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                 <img
                   src={featuredArtwork.heroImage}
                   alt={featuredArtwork.title}
-                  className="w-full h-full object-cover object-center grayscale contrast-105 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
                 {/* Floating Status & Artwork Info */}
                 <div className="absolute top-4 left-4">
@@ -94,8 +94,8 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                   </span>
                 </div>
 
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                  <div className="text-xs uppercase tracking-widest text-white/80">
+                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
+                  <div className="text-xs uppercase tracking-widest text-white/80 font-mono">
                     {featuredArtwork.code} · {featuredArtwork.year}
                   </div>
                   <h2 className="font-serif-sculpture text-2xl sm:text-3xl text-white">
@@ -105,23 +105,13 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                     {featuredArtwork.material}
                   </p>
                   <div className="pt-2 text-xs text-white/90 underline underline-offset-4 flex items-center gap-1 group-hover:text-white">
-                    Otevřít technický list & video detail
+                    Otevřít technický list plastiky
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="mt-12 flex justify-center">
-        <a
-          href="#dila"
-          className="text-[#98968F] hover:text-[#121214] transition-colors p-2 flex flex-col items-center gap-1 text-[11px] uppercase tracking-widest"
-        >
-          <span>Srolovat k dílům</span>
-          <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
-        </a>
       </div>
     </section>
   );

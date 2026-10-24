@@ -2,27 +2,27 @@
   "id": "prasklina-casu",
   "slug": "prasklina-casu",
   "code": "VM-02",
-  "title": "Prasklina ÄŤasu",
-  "subtitle": "KomornĂ­ reflexe",
+  "title": "Hledačka hvězd",
+  "subtitle": "Abstrahovaná figura",
   "year": 2023,
   "category": "stone",
-  "material": "BĂ­lĂ˝ sliveneckĂ˝ mramor, ruÄŤnĂ­ pemrlovĂˇnĂ­",
+  "material": "Bílý krystalický mramor, ručně jemně broušený povrch",
   "dimensions": {
-    "height": 68,
-    "width": 52,
-    "depth": 40,
-    "weight": 62
+    "height": 72,
+    "width": 28,
+    "depth": 22,
+    "weight": 34
   },
-  "description": "Blok krystalickĂ©ho mramoru rozetnutĂ˝ kontrolovanĂ˝m lomem a nĂˇslednÄ› zjemnÄ›nĂ˝ ruÄŤnĂ­m brouĹˇenĂ­m vnitĹ™nĂ­ch ploch. Kontrast surovĂ© lomy a hedvĂˇbnĂ©ho lesku vnitĹ™nĂ­ ĹˇtÄ›rbiny.",
-  "curatorNote": "OcenÄ›no Cenou kritiky na MezinĂˇrodnĂ­m sochaĹ™skĂ©m bienĂˇle 2023.",
+  "description": "Minimalistická sochařská forma redukující postavu na čistou linii a zakloněný ovál hlavy hledící vzhůru. Hedvábně matný povrch mramoru zachycuje jemné světelné přechody a zdůrazňuje křehkost vertikály.",
+  "curatorNote": "Výrazná pocta rané sochařské abstrakci. Komorní solitér určený pro tichou kontemplaci v soukromém interiéru.",
   "status": "sold",
   "priceMode": "hidden",
-  "provenance": "SoukromĂˇ sbĂ­rka, Praha 6",
+  "provenance": "Soukromá sbírka, Praha 6",
   "heroImage": "/images/artworks/prasklina-casu.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/prasklina-casu.jpg",
-      "alt": "Prasklina ÄŤasu - celkový pohled",
+      "alt": "Hledačka hvězd - celkový pohled",
       "label": "Celkový pohled"
     }
   ],

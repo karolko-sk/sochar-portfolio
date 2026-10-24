@@ -2,27 +2,27 @@
   "id": "monolit-vii",
   "slug": "monolit-vii",
   "code": "VM-01",
-  "title": "Monolit VII",
-  "subtitle": "TichĂˇ vertikĂˇla",
+  "title": "Probuzení hmoty",
+  "subtitle": "Figurální vertikála",
   "year": 2024,
   "category": "bronze",
-  "material": "PatinovanĂ˝ bronz, leĹˇtÄ›nĂ˝ ÄŤernĂ˝ diabas",
+  "material": "Patinovaný litý bronz, leštěný černý diabas",
   "dimensions": {
-    "height": 186,
-    "width": 42,
-    "depth": 38,
-    "weight": 94
+    "height": 182,
+    "width": 45,
+    "depth": 40,
+    "weight": 88
   },
-  "description": "MonumentĂˇlnĂ­ vertikĂˇlnĂ­ plastika zkoumajĂ­cĂ­ rovnovĂˇhu mezi vnitĹ™nĂ­m pnutĂ­m litĂ©ho bronzu a chladnou stabilitou kamennĂ©ho soklu. Povrch nese jemnou zelenou oxidaci pĹ™echĂˇzejĂ­cĂ­ v temnÄ› hnÄ›dou hloubku.",
-  "curatorNote": "DĂ­lo z cyklu â€žVertikĂˇly pamÄ›tiâ€ś, kde autor redukuje figuru na ÄŤistĂ˝ energetickĂ˝ sloup. VhodnĂ© pro reprezentativnĂ­ interiĂ©ry i zastĹ™eĹˇenĂˇ atria.",
+  "description": "Monumentální bronzová figura zkoumající probuzení lidské formy z beztvaré hmoty. Precizní anatomické modelování přechází v hrubší strukturu povrchu s přirozenou tmavě hnědou patinou a jemnými olivovými akcenty.",
+  "curatorNote": "Dílo z cyklu „Postava a prostor“. Zkoumání tělesného napětí a zranitelnosti lidské existence v dialogu s architekturou.",
   "status": "available",
   "priceMode": "fixed",
-  "price": "280 000 KÄŤ",
+  "price": "280 000 Kč",
   "heroImage": "/images/artworks/monolit-vii.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/monolit-vii.jpg",
-      "alt": "Monolit VII - celkový pohled",
+      "alt": "Probuzení hmoty - celkový pohled",
       "label": "Celkový pohled"
     }
   ],

@@ -39,8 +39,21 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
     }
   };
 
+  const getCategoryLabel = (cat: string) => {
+    switch (cat) {
+      case 'bronze':
+        return 'Patinovaný bronz';
+      case 'stone':
+        return 'Kámen & Mramor';
+      case 'steel-glass':
+        return 'Kov & Dřevo';
+      default:
+        return cat;
+    }
+  };
+
   return (
-    <div className="group flex flex-col bg-transparent transition-all duration-300">
+    <div className="group flex flex-col h-full bg-transparent transition-all duration-300">
       {/* Visual Artwork Frame (Zero-Smog: Hairline border only) */}
       <div
         onClick={() => onOpen(artwork)}
@@ -49,7 +62,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
         <img
           src={artwork.heroImage}
           alt={artwork.title}
-          className="w-full h-full object-cover object-center grayscale contrast-105 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
+          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
         />
 
         {/* Video / 360 Indicator if available */}
@@ -81,17 +94,17 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
       </div>
 
       {/* Typography & Hairline Ledger */}
-      <div className="pt-4 flex flex-col flex-grow">
+      <div className="pt-4 flex flex-col flex-1">
         <div className="flex items-center justify-between gap-2 mb-1.5">
-          <span className="text-[11px] uppercase tracking-widest text-[#98968F]">
-            {artwork.year} · {artwork.category.toUpperCase()}
+          <span className="text-[11px] uppercase tracking-wider text-[#98968F]">
+            {artwork.year} · {getCategoryLabel(artwork.category)}
           </span>
           {getStatusBadge()}
         </div>
 
         <h3
           onClick={() => onOpen(artwork)}
-          className="font-serif-sculpture text-xl text-[#121214] group-hover:text-[#666560] transition-colors cursor-pointer"
+          className="font-serif-sculpture text-xl text-[#121214] group-hover:text-[#666560] transition-colors cursor-pointer line-clamp-1"
         >
           {artwork.title}
         </h3>
@@ -103,7 +116,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
         {/* Hairline Technical Dimension Row */}
         <div className="mt-3 pt-2.5 border-t border-[#E5E2DA] flex items-center justify-between text-xs">
           <span className="text-[#666560] font-mono text-[11px]">
-            {artwork.dimensions.height} × {artwork.dimensions.width} × {artwork.dimensions.depth} cm · {artwork.dimensions.weight} kg
+            {artwork.dimensions.height} × {artwork.dimensions.width} × {artwork.dimensions.depth} cm{artwork.dimensions.weight ? ` · ${artwork.dimensions.weight} kg` : ''}
           </span>
 
           {artwork.status === 'available' && artwork.price && (
@@ -116,8 +129,8 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
           )}
         </div>
 
-        {/* Dominant Action for the Card */}
-        <div className="mt-3 pt-2">
+        {/* Dominant Action for the Card - Pushed to bottom */}
+        <div className="mt-auto pt-4">
           {artwork.status === 'available' ? (
             <button
               onClick={() => onQuickInquire(artwork)}

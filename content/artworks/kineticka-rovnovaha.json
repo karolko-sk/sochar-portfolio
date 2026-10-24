@@ -2,28 +2,28 @@
   "id": "kineticka-rovnovaha",
   "slug": "kineticka-rovnovaha",
   "code": "VM-05",
-  "title": "KinetickĂˇ rovnovĂˇha",
-  "subtitle": "GravitaÄŤnĂ­ osa",
+  "title": "Myslitel – Bod tíže",
+  "subtitle": "Monumentální plastika",
   "year": 2022,
-  "category": "steel-glass",
-  "material": "KovanĂˇ konstrukÄŤnĂ­ ocel, grafitovĂ˝ mikroskopickĂ˝ nĂˇtÄ›r",
+  "category": "bronze",
+  "material": "Patinovaný litý bronz, sokl z tmavé žuly",
   "dimensions": {
-    "height": 215,
-    "width": 90,
-    "depth": 60,
-    "weight": 115
+    "height": 180,
+    "width": 98,
+    "depth": 140,
+    "weight": 380
   },
-  "description": "ProstorovĂ© tÄ›leso balancujĂ­cĂ­ na jedinĂ©m kalenĂ©m hrotu. I pĹ™es znaÄŤnou hmotnost ocelovĂ© hmoty reaguje na dotek ruky jemnĂ˝m pomalĂ˝m houpĂˇnĂ­m.",
-  "curatorNote": "PĹ™edstaveno na bienĂˇle v Linci, nĂˇslednÄ› zakoupeno rakouskou nadacĂ­ souÄŤasnĂ©ho umÄ›nĂ­.",
+  "description": "Monumentální kompozice zkoumající soustředění tělesné síly do jednoho tichého bodu myšlení. Každý svalový záhyb nese napětí vnitřního zápasu mezi hmotnou gravitací a duchem.",
+  "curatorNote": "Autorská parafráze klasického motivu v kontextu moderního ateliéru. Zastoupeno v mezinárodní reprezentativní sbírce.",
   "status": "sold",
   "priceMode": "hidden",
-  "provenance": "ZahraniÄŤnĂ­ soukromĂˇ sbĂ­rka, VĂ­deĹ",
+  "provenance": "Soukromá sbírka, Vídeň",
   "heroImage": "/images/artworks/kineticka-rovnovaha.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/kineticka-rovnovaha.jpg",
-      "alt": "KinetickĂˇ rovnovĂˇha - celkový pohled",
-      "label": "Celkový pohled"
+      "alt": "Myslitel - celková kompozice",
+      "label": "Celková kompozice"
     }
   ],
   "featured": false,

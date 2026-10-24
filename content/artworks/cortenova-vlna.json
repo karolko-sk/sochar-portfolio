@@ -2,28 +2,28 @@
   "id": "cortenova-vlna",
   "slug": "cortenova-vlna",
   "code": "VM-03",
-  "title": "CortenovĂˇ vlna",
-  "subtitle": "ExteriĂ©rovĂˇ dynamika",
+  "title": "Strážce paměti",
+  "subtitle": "Expresivní studie hlavy",
   "year": 2024,
-  "category": "steel-glass",
-  "material": "SvaĹ™ovanĂˇ ocel Corten s pĹ™irozenou stabilizovanou rzĂ­",
+  "category": "bronze",
+  "material": "Hrubě patinovaný litý bronz, autorský odlitek",
   "dimensions": {
-    "height": 145,
-    "width": 70,
-    "depth": 55,
-    "weight": 85
+    "height": 84,
+    "width": 52,
+    "depth": 48,
+    "weight": 58
   },
-  "description": "ProstorovĂˇ kĹ™ivka tvarovanĂˇ ze tĹ™Ă­ masivnĂ­ch plĂˇtĹŻ kortenovĂ© oceli. DĂ­lo je konstruovĂˇno pro venkovnĂ­ umĂ­stÄ›nĂ­, kde vlivem srĂˇĹľek a slunce neustĂˇle mÄ›nĂ­ barevnĂ˝ odstĂ­n sametovĂ© rzi.",
-  "curatorNote": "RezervovĂˇno pro privĂˇtnĂ­ rezidenÄŤnĂ­ zahradu v PrĹŻhonicĂ­ch. MoĹľnost objednĂˇnĂ­ autorskĂ© variace.",
+  "description": "Monumentální plastická studie hlavy zachycující dramatické vnitřní pohnutí a surovou energii lidského vědomí. Hluboké vrypy v modelaci a tmavá patinace vytvářejí silné kontrasty světla a stínu.",
+  "curatorNote": "Cyklus „Tváře přítomnosti“. Socha byla oceněna na mezinárodním bienále plastiky a stala se součástí autorovy profilové série.",
   "status": "reserved",
   "priceMode": "fixed",
-  "price": "210 000 KÄŤ",
+  "price": "190 000 Kč",
   "heroImage": "/images/artworks/cortenova-vlna.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/cortenova-vlna.jpg",
-      "alt": "CortenovĂˇ vlna - celkový pohled",
-      "label": "Celkový pohled"
+      "alt": "Strážce paměti - detail profilu",
+      "label": "Detail profilu"
     }
   ],
   "featured": false,

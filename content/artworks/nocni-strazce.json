@@ -2,27 +2,27 @@
   "id": "nocni-strazce",
   "slug": "nocni-strazce",
   "code": "VM-08",
-  "title": "NoÄŤnĂ­ strĂˇĹľce",
-  "subtitle": "MonumentĂˇlnĂ­ figura",
+  "title": "Noční strážce",
+  "subtitle": "Monumentální bronzová figura",
   "year": 2023,
   "category": "bronze",
-  "material": "TmavĂ˝ patinovanĂ˝ bronz s tyrkysovĂ˝m oxidem",
+  "material": "Tmavý patinovaný bronz s tyrkysovým oxidem na podstavci",
   "dimensions": {
-    "height": 192,
-    "width": 50,
-    "depth": 44,
-    "weight": 108
+    "height": 195,
+    "width": 58,
+    "depth": 48,
+    "weight": 115
   },
-  "description": "PĹŻsobivĂˇ monumentĂˇlnĂ­ plastika evokujĂ­cĂ­ stylizovanou strĂˇĹľnĂ­ postavu. HlubokĂˇ ÄŤerĹ patiny kontrastuje s tyrkysovĂ˝mi akcenty v zĂˇhybech a hranĂˇch dĂ­la.",
-  "curatorNote": "ĂšstĹ™ednĂ­ exponĂˇt podzimnĂ­ vĂ˝stavy v Galerii NovĂˇ sĂ­Ĺ.",
+  "description": "Svalnatá, ukotvená bronzová figura stojící v klidném kontrapostu. Tmavý, sametově hluboký tón patiny s jemnými tyrkysovými stopami oxidace v záhybech dává plastice majestátní a nadčasový charakter.",
+  "curatorNote": "Ústřední exponát ateliérového fondu. Určeno pro dominantní umístění v exteriérovém atriu nebo otevřené hale.",
   "status": "available",
   "priceMode": "fixed",
-  "price": "320 000 KÄŤ",
+  "price": "340 000 Kč",
   "heroImage": "/images/artworks/nocni-strazce.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/nocni-strazce.jpg",
-      "alt": "NoÄŤnĂ­ strĂˇĹľce - celkový pohled",
+      "alt": "Noční strážce - bronzová plastika",
       "label": "Celkový pohled"
     }
   ],

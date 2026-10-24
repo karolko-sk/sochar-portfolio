@@ -2,19 +2,19 @@
   "id": "geometrie-ticha",
   "slug": "geometrie-ticha",
   "code": "VM-06",
-  "title": "Geometrie ticha",
-  "subtitle": "ArchitektonickĂ˝ rytmus",
+  "title": "Múza harmonie",
+  "subtitle": "Klasická drapérie",
   "year": 2024,
   "category": "stone",
-  "material": "LeĹˇtÄ›nĂ˝ Ĺ™Ă­mskĂ˝ travertin, vklĂˇdanĂˇ patinovanĂˇ mosaz",
+  "material": "Bílý kararský mramor, ručně hlazená drapérie",
   "dimensions": {
-    "height": 82,
-    "width": 34,
-    "depth": 30,
-    "weight": 48
+    "height": 178,
+    "width": 62,
+    "depth": 50,
+    "weight": 185
   },
-  "description": "StriktnĂ­ geometrickĂ© tÄ›leso s pĂłrovitou texturou travertinu, do kterĂ© jsou zapuĹˇtÄ›ny tenkĂ© mosaznĂ© prouĹľky. KaĹľdĂˇ ze ÄŤtyĹ™ stran nabĂ­zĂ­ jinou prostorovou kompozici.",
-  "curatorNote": "Novinka z ateliĂ©ru, dokonÄŤeno v zĂˇĹ™Ă­ 2024. DoporuÄŤeno do minimalistickĂ˝ch interiĂ©rĹŻ.",
+  "description": "Klasická sochařská studie zkoumající měkkost splývavé látky v protikladu k pevnosti mramorového jádra. Postava s hudebním nástrojem ztělesňuje tichý rytmus a vyváženost proporcí.",
+  "curatorNote": "Špičková ukázka figurální práce s historickým odkazem. Vhodné pro reprezentativní haly a historické prostory.",
   "status": "available",
   "priceMode": "on_request",
   "price": "Cena na dotaz",
@@ -22,7 +22,7 @@
   "galleryImages": [
     {
       "url": "/images/artworks/geometrie-ticha.jpg",
-      "alt": "Geometrie ticha - celkový pohled",
+      "alt": "Múza harmonie - celkový pohled",
       "label": "Celkový pohled"
     }
   ],

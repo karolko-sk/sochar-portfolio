@@ -2,28 +2,28 @@
   "id": "torzo-pameti",
   "slug": "torzo-pameti",
   "code": "VM-07",
-  "title": "Torzo pamÄ›ti",
-  "subtitle": "HutnĂˇ matĂ©riovost",
+  "title": "Vertikála ticha",
+  "subtitle": "Meditativní solitér",
   "year": 2021,
-  "category": "bronze",
-  "material": "Ĺ edĂˇ litina, zrnitĂ˝ povrch, pĹ™Ă­rodnĂ­ vÄŤelĂ­ vosk",
+  "category": "steel-glass",
+  "material": "Tmavá litina, zrnitý povrch, voskovaný dubový sokl",
   "dimensions": {
-    "height": 95,
-    "width": 48,
-    "depth": 36,
-    "weight": 78
+    "height": 125,
+    "width": 38,
+    "depth": 30,
+    "weight": 64
   },
-  "description": "LitinovĂ˝ odlitek ze ztracenĂ© voskovĂ© formy. Povrch si uchoval hrubou texturu licĂ­ho pĂ­sku a byl konzervovĂˇn horkĂ˝m vÄŤelĂ­m voskem s grafitovĂ˝m pigmentem.",
-  "curatorNote": "ZĂˇkladnĂ­ kĂˇmen ranĂ©ho cyklu â€žArcheologie hmotyâ€ś.",
+  "description": "Štíhlá vertikální plastika vyzařující klid a vnitřní rovnováhu. Jemné kaskádovité linie splývajícího roucha stékají podél těla a vytvářejí rytmický ornamentální reliéf.",
+  "curatorNote": "Dílo vzniklé z dialogu mezi východním minimalismem a středoevropskou sochařskou tradicí. V soukromé sbírce.",
   "status": "sold",
   "priceMode": "hidden",
-  "provenance": "SoukromĂˇ sbĂ­rka, Brno",
+  "provenance": "Soukromá sbírka, Brno",
   "heroImage": "/images/artworks/torzo-pameti.jpg",
   "galleryImages": [
     {
       "url": "/images/artworks/torzo-pameti.jpg",
-      "alt": "Torzo pamÄ›ti - celkový pohled",
-      "label": "Celkový pohled"
+      "alt": "Vertikála ticha - meditativní linie",
+      "label": "Meditativní linie"
     }
   ],
   "featured": false,
