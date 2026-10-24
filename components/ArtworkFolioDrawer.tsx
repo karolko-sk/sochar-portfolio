@@ -48,10 +48,10 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
       />
 
       {/* Slide-Over Drawer Container */}
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-4 sm:pl-10">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
         <div className="w-screen max-w-2xl bg-[#FAF9F6] border-l border-[#E5E2DA] flex flex-col shadow-2xl relative">
           {/* Header Bar */}
-          <div className="px-6 py-4 border-b border-[#E5E2DA] flex items-center justify-between bg-[#FAF9F6]">
+          <div className="px-5 sm:px-6 py-4 border-b border-[#E5E2DA] flex items-center justify-between bg-[#FAF9F6]">
             <div className="flex items-center gap-3">
               <span className="text-xs uppercase tracking-widest text-[#98968F] font-mono">
                 {artwork.code}
@@ -71,7 +71,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
           </div>
 
           {/* Scrollable Content Body */}
-          <div className="flex-1 overflow-y-auto px-6 py-8 space-y-8">
+          <div className="flex-1 overflow-y-auto px-5 sm:px-6 py-6 sm:py-8 space-y-8">
             {/* Visual Media Showcase (Photos or Video Loop) */}
             <div className="space-y-4">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] bg-[#F4F2EE] border border-[#E5E2DA] overflow-hidden">
@@ -227,8 +227,8 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               <h4 className="text-xs uppercase tracking-wider text-[#98968F] font-semibold">
                 Technická specifikace pro instalaci
               </h4>
-              <div className="grid grid-cols-2 gap-4 text-xs">
-                <div className="p-3 bg-white border border-[#E5E2DA]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
                   <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
                     Materiál & Povrch
                   </span>
@@ -237,25 +237,25 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                   </span>
                 </div>
 
-                <div className="p-3 bg-white border border-[#E5E2DA]">
+                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
                   <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
                     Rozměry (V × Š × H)
                   </span>
-                  <span className="font-mono font-medium text-[#121214] mt-1 block">
-                    {artwork.dimensions.height} × {artwork.dimensions.width} × {artwork.dimensions.depth} cm
+                  <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
+                    {artwork.dimensions.height} × {artwork.dimensions.width} × {artwork.dimensions.depth}&nbsp;cm
                   </span>
                 </div>
 
-                <div className="p-3 bg-white border border-[#E5E2DA]">
+                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
                   <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
                     Celková hmotnost
                   </span>
-                  <span className="font-mono font-medium text-[#121214] mt-1 block">
-                    {artwork.dimensions.weight} kg
+                  <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
+                    {artwork.dimensions.weight}&nbsp;kg
                   </span>
                 </div>
 
-                <div className="p-3 bg-white border border-[#E5E2DA]">
+                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
                   <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
                     Doporučené umístění
                   </span>
@@ -270,21 +270,21 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
 
             {/* Human Scale Comparator Visualizer */}
             <div className="border-t border-[#E5E2DA] pt-6 space-y-3">
-              <div className="flex items-center justify-between text-xs">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-1">
                 <span className="uppercase tracking-wider text-[#98968F] font-semibold">
                   Měřítko vůči lidské postavě (180 cm)
                 </span>
-                <span className="text-[#666560] font-mono">
-                  Výška plastiky: {artwork.dimensions.height} cm
+                <span className="text-[#666560] font-mono text-[11px] sm:text-xs">
+                  Výška plastiky:&nbsp;<strong className="text-[#121214] font-mono">{artwork.dimensions.height}&nbsp;cm</strong>
                 </span>
               </div>
-              <div className="h-32 bg-white border border-[#E5E2DA] flex items-end justify-center gap-12 px-8 py-3">
+              <div className="h-32 bg-white border border-[#E5E2DA] flex items-end justify-center gap-8 sm:gap-12 px-6 sm:px-8 py-3">
                 {/* Human silhouette representation */}
                 <div className="flex flex-col items-center">
                   <div className="w-5 h-24 bg-[#D4D0C5] flex items-center justify-center text-[9px] text-[#666560] font-mono">
-                    180 cm
+                    180
                   </div>
-                  <span className="text-[10px] text-[#98968F] mt-1">Postava</span>
+                  <span className="text-[10px] text-[#98968F] mt-1">Postava (180 cm)</span>
                 </div>
 
                 {/* Sculpture representation scaled */}
@@ -308,7 +308,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                     {artwork.dimensions.height}
                   </div>
                   <span className="text-[10px] text-[#121214] font-medium mt-1">
-                    Socha
+                    Socha ({artwork.dimensions.height}&nbsp;cm)
                   </span>
                 </div>
               </div>
@@ -316,9 +316,9 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
           </div>
 
           {/* Sticky Bottom Actions Bar */}
-          <div className="p-6 border-t border-[#E5E2DA] bg-[#FAF9F6] space-y-3">
+          <div className="p-4 sm:p-6 border-t border-[#E5E2DA] bg-[#FAF9F6] space-y-3 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))]">
             {artwork.status === 'available' ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 <button
                   onClick={() => onInquire(artwork, 'purchase')}
                   className="w-full py-3.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black transition-colors flex items-center justify-center gap-2"

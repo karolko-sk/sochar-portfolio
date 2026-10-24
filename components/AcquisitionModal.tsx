@@ -24,6 +24,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [generatedMailto, setGeneratedMailto] = useState<string>('');
 
   if (!artwork) return null;
 
@@ -31,11 +32,23 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate sending email to sculptor
+    const subject = `Poptávka: [${artwork.code}] ${artwork.title} – ${formData.name}`;
+    const body = `Dobrý den,\n\nzasílám poptávku k dílu:\n• Název díla: ${artwork.title} (${artwork.code})\n• Materiál: ${artwork.material}\n• Rozměry: ${artwork.dimensions.height} × ${artwork.dimensions.width} × ${artwork.dimensions.depth} cm (${artwork.dimensions.weight} kg)\n• Typ poptávky: ${inquiryType === 'purchase' ? 'Zájem o koupi díla' : 'Žádost o osobní návštěvu ateliéru'}\n\nKontaktní údaje zájemce:\n• Jméno: ${formData.name}\n• E-mail: ${formData.email}\n• Telefon: ${formData.phone}\n\nDoplňující zpráva:\n${formData.message || 'Bez doplňující zprávy.'}\n\nS pozdravem,\n${formData.name}`;
+
+    const mailto = `mailto:atelier@viktormarek.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setGeneratedMailto(mailto);
+
+    // Attempt to open native email client
+    try {
+      window.location.href = mailto;
+    } catch {
+      // Browser popup restriction fallback
+    }
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 600);
+    }, 400);
   };
 
   return (
@@ -57,25 +70,37 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
         </button>
 
         {isSubmitted ? (
-          <div className="py-8 text-center space-y-4">
+          <div className="py-6 text-center space-y-4">
             <div className="w-12 h-12 rounded-full bg-[#EBF2EF] text-[#2D4F44] mx-auto flex items-center justify-center border border-[#2D4F44]/20">
               <Check className="w-6 h-6" />
             </div>
             <h3 className="font-serif-sculpture text-2xl text-[#121214]">
-              Poptávka byla úspěšně odeslána
+              Poptávka byla připravena k odeslání
             </h3>
             <p className="text-sm text-[#666560] leading-relaxed max-w-sm mx-auto">
-              Děkujeme za Váš zájem o dílo <strong className="text-[#121214]">{artwork.title}</strong> ({artwork.code}).
-              Sochař Viktor Marek Vás bude osobně kontaktovat během 24 hodin na uvedený e-mail či telefon.
+              Děkujeme za Váš zájem o plastiku <strong className="text-[#121214]">{artwork.title}</strong> ({artwork.code}).
+              Váš e-mailový klient by se měl automaticky otevřít s předvyplněnými údaji pro ateliér.
             </p>
-            <div className="pt-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              {generatedMailto && (
+                <a
+                  href={generatedMailto}
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black transition-colors flex items-center justify-center gap-2"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Otevřít v e-mailu</span>
+                </a>
+              )}
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black"
+                className="w-full sm:w-auto px-5 py-2.5 border border-[#D4D0C5] text-[#121214] text-xs uppercase tracking-wider font-medium hover:border-[#121214] transition-colors"
               >
-                Zavřít a pokračovat v prohlídce
+                Zavřít
               </button>
             </div>
+            <p className="text-[11px] text-[#98968F] pt-2">
+              Případně pište přímo na <a href="mailto:atelier@viktormarek.cz" className="underline hover:text-[#121214]">atelier@viktormarek.cz</a> nebo volejte <a href="tel:+420777890123" className="underline hover:text-[#121214]">+420 777 890 123</a>.
+            </p>
           </div>
         ) : (
           <div className="space-y-6">

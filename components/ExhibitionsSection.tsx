@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Calendar, MapPin, ExternalLink, Download, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, MapPin, Download, Check, Clock } from 'lucide-react';
 import { Exhibition } from '@/types';
 
 interface ExhibitionsSectionProps {
@@ -11,10 +11,49 @@ interface ExhibitionsSectionProps {
 export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
   exhibitions,
 }) => {
+  const [downloadedId, setDownloadedId] = useState<string | null>(null);
   const todayStr = new Date().toISOString().split('T')[0];
   // Derived upcoming exhibition based on date invariant
   const upcoming = exhibitions.find((e) => e.endDate >= todayStr) || exhibitions[0];
   const past = exhibitions.filter((e) => e.id !== upcoming?.id);
+
+  const handleDownloadIcs = (exhibition: Exhibition) => {
+    const cleanDate = (d: string) => d.replace(/-/g, '');
+    const start = cleanDate(exhibition.startDate);
+    const end = cleanDate(exhibition.endDate || exhibition.startDate);
+
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Viktor Marek Atelier//Vernisaze//CS',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      `UID:exhibition-${exhibition.id}-${Date.now()}@viktormarek.cz`,
+      `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
+      `DTSTART;VALUE=DATE:${start}`,
+      `DTEND;VALUE=DATE:${end}`,
+      `SUMMARY:${exhibition.title} · Výstava MgA. Viktor Marek`,
+      `DESCRIPTION:${exhibition.description.replace(/\n/g, ' ')} (Kurátor: ${exhibition.curator})`,
+      `LOCATION:${exhibition.venue}, ${exhibition.city}`,
+      'STATUS:CONFIRMED',
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${exhibition.id || 'vernisaz-viktor-marek'}.ics`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    setDownloadedId(exhibition.id);
+    setTimeout(() => setDownloadedId(null), 3500);
+  };
 
   return (
     <section id="vystavy" className="py-20 border-b border-[#E5E2DA]">
@@ -69,17 +108,23 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
               </div>
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-                {upcoming.externalEventUrl && (
-                  <a
-                    href={upcoming.externalEventUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-3 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-black transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>Uložit do kalendáře</span>
-                  </a>
-                )}
+                <button
+                  type="button"
+                  onClick={() => handleDownloadIcs(upcoming)}
+                  className="px-5 py-3 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-black transition-colors flex items-center justify-center gap-2"
+                >
+                  {downloadedId === upcoming.id ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Kalendář stažen (.ics)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Uložit do kalendáře (.ics)</span>
+                    </>
+                  )}
+                </button>
                 {upcoming.mapUrl && (
                   <a
                     href={upcoming.mapUrl}
