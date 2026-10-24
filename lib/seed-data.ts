@@ -23,23 +23,12 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'available',
     priceMode: 'fixed',
     price: '280 000 Kč',
-    heroImage:
-      'https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/monolit-vii.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/monolit-vii.jpg',
         alt: 'Monolit VII - celkový pohled',
         label: 'Celkový pohled',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Monolit VII - detail bronzové patiny',
-        label: 'Detail patiny',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Monolit VII - profil a plasticita',
-        label: 'Profil a plasticita',
       },
     ],
     videoUrl:
@@ -55,7 +44,7 @@ export const SEED_ARTWORKS: Artwork[] = [
     subtitle: 'Komorní reflexe',
     year: 2023,
     category: 'stone',
-    material: 'Bílý slivenecký mramor, ruční pemrlování',
+    material: 'Bílý krystalický mramor, ruční pemrlování',
     dimensions: {
       height: 68,
       width: 52,
@@ -68,18 +57,12 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'sold',
     priceMode: 'hidden',
     provenance: 'Soukromá sbírka, Praha 6',
-    heroImage:
-      'https://images.unsplash.com/photo-1569172122301-bc500f309134?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/prasklina-casu.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1569172122301-bc500f309134?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/prasklina-casu.jpg',
         alt: 'Prasklina času - celková kompozice',
         label: 'Celkový pohled',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Prasklina času - makro struktury kamene',
-        label: 'Makro lomu',
       },
     ],
     featured: false,
@@ -107,18 +90,12 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'reserved',
     priceMode: 'fixed',
     price: '210 000 Kč',
-    heroImage:
-      'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/cortenova-vlna.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/cortenova-vlna.jpg',
         alt: 'Cortenová vlna - venkovní instalace',
         label: 'Exteriérový záběr',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Cortenová vlna - detail svařované hrany',
-        label: 'Detail rzi a hrany',
       },
     ],
     featured: false,
@@ -145,18 +122,12 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'available',
     priceMode: 'fixed',
     price: '165 000 Kč',
-    heroImage:
-      'https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/vnitrni-prostor.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/vnitrni-prostor.jpg',
         alt: 'Vnitřní prostor - refrakce světla ve skle',
         label: 'Průchod světla',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Vnitřní prostor - usazení do dřeva',
-        label: 'Detail dubového soklu',
       },
     ],
     videoUrl:
@@ -186,11 +157,10 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'sold',
     priceMode: 'hidden',
     provenance: 'Zahraniční soukromá sbírka, Vídeň',
-    heroImage:
-      'https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/kineticka-rovnovaha.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/kineticka-rovnovaha.jpg',
         alt: 'Kinetická rovnováha - vertikální kompozice',
         label: 'Celkový pohled',
       },
@@ -219,11 +189,10 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'available',
     priceMode: 'on_request',
     price: 'Cena na dotaz',
-    heroImage:
-      'https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/geometrie-ticha.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/geometrie-ticha.jpg',
         alt: 'Geometrie ticha - travertin a mosaz',
         label: 'Čelní pohled',
       },
@@ -252,11 +221,10 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'sold',
     priceMode: 'hidden',
     provenance: 'Soukromá sbírka, Brno',
-    heroImage:
-      'https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/torzo-pameti.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/torzo-pameti.jpg',
         alt: 'Torzo paměti - litina',
         label: 'Celkový pohled',
       },
@@ -285,18 +253,12 @@ export const SEED_ARTWORKS: Artwork[] = [
     status: 'available',
     priceMode: 'fixed',
     price: '320 000 Kč',
-    heroImage:
-      'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85',
+    heroImage: '/images/artworks/nocni-strazce.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85',
+        url: '/images/artworks/nocni-strazce.jpg',
         alt: 'Noční strážce - bronzová plastika',
         label: 'Celkový pohled',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85',
-        alt: 'Noční strážce - detail oxidu v záhybech',
-        label: 'Detail patiny',
       },
     ],
     videoUrl:
@@ -378,8 +340,7 @@ export const SEED_ARTIST_PROFILE: ArtistProfile = {
   ],
   manifestoQuote:
     'Socha není dekorací prostoru. Je to bod, který prostor nově definuje a nutí člověka zpomalit a vnímat gravitaci vlastního těla.',
-  portraitImage:
-    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=85',
+  portraitImage: '/images/artist-portrait.jpg',
   catalogPdfUrl: '',
   education: [
     {

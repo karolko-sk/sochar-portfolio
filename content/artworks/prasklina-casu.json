@@ -2,33 +2,28 @@
   "id": "prasklina-casu",
   "slug": "prasklina-casu",
   "code": "VM-02",
-  "title": "Prasklina času",
-  "subtitle": "Komorní reflexe",
+  "title": "Prasklina ÄŤasu",
+  "subtitle": "KomornĂ­ reflexe",
   "year": 2023,
   "category": "stone",
-  "material": "Bílý slivenecký mramor, ruční pemrlování",
+  "material": "BĂ­lĂ˝ sliveneckĂ˝ mramor, ruÄŤnĂ­ pemrlovĂˇnĂ­",
   "dimensions": {
     "height": 68,
     "width": 52,
     "depth": 40,
     "weight": 62
   },
-  "description": "Blok krystalického mramoru rozetnutý kontrolovaným lomem a následně zjemněný ručním broušením vnitřních ploch. Kontrast surové lomy a hedvábného lesku vnitřní štěrbiny.",
-  "curatorNote": "Oceněno Cenou kritiky na Mezinárodním sochařském bienále 2023.",
+  "description": "Blok krystalickĂ©ho mramoru rozetnutĂ˝ kontrolovanĂ˝m lomem a nĂˇslednÄ› zjemnÄ›nĂ˝ ruÄŤnĂ­m brouĹˇenĂ­m vnitĹ™nĂ­ch ploch. Kontrast surovĂ© lomy a hedvĂˇbnĂ©ho lesku vnitĹ™nĂ­ ĹˇtÄ›rbiny.",
+  "curatorNote": "OcenÄ›no Cenou kritiky na MezinĂˇrodnĂ­m sochaĹ™skĂ©m bienĂˇle 2023.",
   "status": "sold",
   "priceMode": "hidden",
-  "provenance": "Soukromá sbírka, Praha 6",
-  "heroImage": "https://images.unsplash.com/photo-1569172122301-bc500f309134?auto=format&fit=crop&w=1400&q=85",
+  "provenance": "SoukromĂˇ sbĂ­rka, Praha 6",
+  "heroImage": "/images/artworks/prasklina-casu.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1569172122301-bc500f309134?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Prasklina času - celková kompozice",
+      "url": "/images/artworks/prasklina-casu.jpg",
+      "alt": "Prasklina ÄŤasu - celkový pohled",
       "label": "Celkový pohled"
-    },
-    {
-      "url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Prasklina času - makro struktury kamene",
-      "label": "Makro lomu"
     }
   ],
   "featured": false,

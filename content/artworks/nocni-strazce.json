@@ -2,33 +2,28 @@
   "id": "nocni-strazce",
   "slug": "nocni-strazce",
   "code": "VM-08",
-  "title": "Noční strážce",
-  "subtitle": "Monumentální figura",
+  "title": "NoÄŤnĂ­ strĂˇĹľce",
+  "subtitle": "MonumentĂˇlnĂ­ figura",
   "year": 2023,
   "category": "bronze",
-  "material": "Tmavý patinovaný bronz s tyrkysovým oxidem",
+  "material": "TmavĂ˝ patinovanĂ˝ bronz s tyrkysovĂ˝m oxidem",
   "dimensions": {
     "height": 192,
     "width": 50,
     "depth": 44,
     "weight": 108
   },
-  "description": "Působivá monumentální plastika evokující stylizovanou strážní postavu. Hluboká čerň patiny kontrastuje s tyrkysovými akcenty v záhybech a hranách díla.",
-  "curatorNote": "Ústřední exponát podzimní výstavy v Galerii Nová síň.",
+  "description": "PĹŻsobivĂˇ monumentĂˇlnĂ­ plastika evokujĂ­cĂ­ stylizovanou strĂˇĹľnĂ­ postavu. HlubokĂˇ ÄŤerĹ patiny kontrastuje s tyrkysovĂ˝mi akcenty v zĂˇhybech a hranĂˇch dĂ­la.",
+  "curatorNote": "ĂšstĹ™ednĂ­ exponĂˇt podzimnĂ­ vĂ˝stavy v Galerii NovĂˇ sĂ­Ĺ.",
   "status": "available",
   "priceMode": "fixed",
-  "price": "320 000 Kč",
-  "heroImage": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85",
+  "price": "320 000 KÄŤ",
+  "heroImage": "/images/artworks/nocni-strazce.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Noční strážce - bronzová plastika",
+      "url": "/images/artworks/nocni-strazce.jpg",
+      "alt": "NoÄŤnĂ­ strĂˇĹľce - celkový pohled",
       "label": "Celkový pohled"
-    },
-    {
-      "url": "https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Noční strážce - detail oxidu v záhybech",
-      "label": "Detail patiny"
     }
   ],
   "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-white-marble-statue-in-a-museum-41481-large.mp4",

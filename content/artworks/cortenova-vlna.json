@@ -2,33 +2,28 @@
   "id": "cortenova-vlna",
   "slug": "cortenova-vlna",
   "code": "VM-03",
-  "title": "Cortenová vlna",
-  "subtitle": "Exteriérová dynamika",
+  "title": "CortenovĂˇ vlna",
+  "subtitle": "ExteriĂ©rovĂˇ dynamika",
   "year": 2024,
   "category": "steel-glass",
-  "material": "Svařovaná ocel Corten s přirozenou stabilizovanou rzí",
+  "material": "SvaĹ™ovanĂˇ ocel Corten s pĹ™irozenou stabilizovanou rzĂ­",
   "dimensions": {
     "height": 145,
     "width": 70,
     "depth": 55,
     "weight": 85
   },
-  "description": "Prostorová křivka tvarovaná ze tří masivních plátů kortenové oceli. Dílo je konstruováno pro venkovní umístění, kde vlivem srážek a slunce neustále mění barevný odstín sametové rzi.",
-  "curatorNote": "Rezervováno pro privátní rezidenční zahradu v Průhonicích. Možnost objednání autorské variace.",
+  "description": "ProstorovĂˇ kĹ™ivka tvarovanĂˇ ze tĹ™Ă­ masivnĂ­ch plĂˇtĹŻ kortenovĂ© oceli. DĂ­lo je konstruovĂˇno pro venkovnĂ­ umĂ­stÄ›nĂ­, kde vlivem srĂˇĹľek a slunce neustĂˇle mÄ›nĂ­ barevnĂ˝ odstĂ­n sametovĂ© rzi.",
+  "curatorNote": "RezervovĂˇno pro privĂˇtnĂ­ rezidenÄŤnĂ­ zahradu v PrĹŻhonicĂ­ch. MoĹľnost objednĂˇnĂ­ autorskĂ© variace.",
   "status": "reserved",
   "priceMode": "fixed",
-  "price": "210 000 Kč",
-  "heroImage": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85",
+  "price": "210 000 KÄŤ",
+  "heroImage": "/images/artworks/cortenova-vlna.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Cortenová vlna - venkovní instalace",
-      "label": "Exteriérový záběr"
-    },
-    {
-      "url": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Cortenová vlna - detail svařované hrany",
-      "label": "Detail rzi a hrany"
+      "url": "/images/artworks/cortenova-vlna.jpg",
+      "alt": "CortenovĂˇ vlna - celkový pohled",
+      "label": "Celkový pohled"
     }
   ],
   "featured": false,

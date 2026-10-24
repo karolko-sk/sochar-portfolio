@@ -2,27 +2,27 @@
   "id": "kineticka-rovnovaha",
   "slug": "kineticka-rovnovaha",
   "code": "VM-05",
-  "title": "Kinetická rovnováha",
-  "subtitle": "Gravitační osa",
+  "title": "KinetickĂˇ rovnovĂˇha",
+  "subtitle": "GravitaÄŤnĂ­ osa",
   "year": 2022,
   "category": "steel-glass",
-  "material": "Kovaná konstrukční ocel, grafitový mikroskopický nátěr",
+  "material": "KovanĂˇ konstrukÄŤnĂ­ ocel, grafitovĂ˝ mikroskopickĂ˝ nĂˇtÄ›r",
   "dimensions": {
     "height": 215,
     "width": 90,
     "depth": 60,
     "weight": 115
   },
-  "description": "Prostorové těleso balancující na jediném kaleném hrotu. I přes značnou hmotnost ocelové hmoty reaguje na dotek ruky jemným pomalým houpáním.",
-  "curatorNote": "Představeno na bienále v Linci, následně zakoupeno rakouskou nadací současného umění.",
+  "description": "ProstorovĂ© tÄ›leso balancujĂ­cĂ­ na jedinĂ©m kalenĂ©m hrotu. I pĹ™es znaÄŤnou hmotnost ocelovĂ© hmoty reaguje na dotek ruky jemnĂ˝m pomalĂ˝m houpĂˇnĂ­m.",
+  "curatorNote": "PĹ™edstaveno na bienĂˇle v Linci, nĂˇslednÄ› zakoupeno rakouskou nadacĂ­ souÄŤasnĂ©ho umÄ›nĂ­.",
   "status": "sold",
   "priceMode": "hidden",
-  "provenance": "Zahraniční soukromá sbírka, Vídeň",
-  "heroImage": "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85",
+  "provenance": "ZahraniÄŤnĂ­ soukromĂˇ sbĂ­rka, VĂ­deĹ",
+  "heroImage": "/images/artworks/kineticka-rovnovaha.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Kinetická rovnováha - vertikální kompozice",
+      "url": "/images/artworks/kineticka-rovnovaha.jpg",
+      "alt": "KinetickĂˇ rovnovĂˇha - celkový pohled",
       "label": "Celkový pohled"
     }
   ],

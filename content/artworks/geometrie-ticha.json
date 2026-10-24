@@ -3,27 +3,27 @@
   "slug": "geometrie-ticha",
   "code": "VM-06",
   "title": "Geometrie ticha",
-  "subtitle": "Architektonický rytmus",
+  "subtitle": "ArchitektonickĂ˝ rytmus",
   "year": 2024,
   "category": "stone",
-  "material": "Leštěný římský travertin, vkládaná patinovaná mosaz",
+  "material": "LeĹˇtÄ›nĂ˝ Ĺ™Ă­mskĂ˝ travertin, vklĂˇdanĂˇ patinovanĂˇ mosaz",
   "dimensions": {
     "height": 82,
     "width": 34,
     "depth": 30,
     "weight": 48
   },
-  "description": "Striktní geometrické těleso s pórovitou texturou travertinu, do které jsou zapuštěny tenké mosazné proužky. Každá ze čtyř stran nabízí jinou prostorovou kompozici.",
-  "curatorNote": "Novinka z ateliéru, dokončeno v září 2024. Doporučeno do minimalistických interiérů.",
+  "description": "StriktnĂ­ geometrickĂ© tÄ›leso s pĂłrovitou texturou travertinu, do kterĂ© jsou zapuĹˇtÄ›ny tenkĂ© mosaznĂ© prouĹľky. KaĹľdĂˇ ze ÄŤtyĹ™ stran nabĂ­zĂ­ jinou prostorovou kompozici.",
+  "curatorNote": "Novinka z ateliĂ©ru, dokonÄŤeno v zĂˇĹ™Ă­ 2024. DoporuÄŤeno do minimalistickĂ˝ch interiĂ©rĹŻ.",
   "status": "available",
   "priceMode": "on_request",
   "price": "Cena na dotaz",
-  "heroImage": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85",
+  "heroImage": "/images/artworks/geometrie-ticha.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Geometrie ticha - travertin a mosaz",
-      "label": "Čelní pohled"
+      "url": "/images/artworks/geometrie-ticha.jpg",
+      "alt": "Geometrie ticha - celkový pohled",
+      "label": "Celkový pohled"
     }
   ],
   "featured": false,

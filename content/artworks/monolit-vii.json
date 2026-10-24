@@ -3,37 +3,27 @@
   "slug": "monolit-vii",
   "code": "VM-01",
   "title": "Monolit VII",
-  "subtitle": "Tichá vertikála",
+  "subtitle": "TichĂˇ vertikĂˇla",
   "year": 2024,
   "category": "bronze",
-  "material": "Patinovaný bronz, leštěný černý diabas",
+  "material": "PatinovanĂ˝ bronz, leĹˇtÄ›nĂ˝ ÄŤernĂ˝ diabas",
   "dimensions": {
     "height": 186,
     "width": 42,
     "depth": 38,
     "weight": 94
   },
-  "description": "Monumentální vertikální plastika zkoumající rovnováhu mezi vnitřním pnutím litého bronzu a chladnou stabilitou kamenného soklu. Povrch nese jemnou zelenou oxidaci přecházející v temně hnědou hloubku.",
-  "curatorNote": "Dílo z cyklu „Vertikály paměti“, kde autor redukuje figuru na čistý energetický sloup. Vhodné pro reprezentativní interiéry i zastřešená atria.",
+  "description": "MonumentĂˇlnĂ­ vertikĂˇlnĂ­ plastika zkoumajĂ­cĂ­ rovnovĂˇhu mezi vnitĹ™nĂ­m pnutĂ­m litĂ©ho bronzu a chladnou stabilitou kamennĂ©ho soklu. Povrch nese jemnou zelenou oxidaci pĹ™echĂˇzejĂ­cĂ­ v temnÄ› hnÄ›dou hloubku.",
+  "curatorNote": "DĂ­lo z cyklu â€žVertikĂˇly pamÄ›tiâ€ś, kde autor redukuje figuru na ÄŤistĂ˝ energetickĂ˝ sloup. VhodnĂ© pro reprezentativnĂ­ interiĂ©ry i zastĹ™eĹˇenĂˇ atria.",
   "status": "available",
   "priceMode": "fixed",
-  "price": "280 000 Kč",
-  "heroImage": "https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85",
+  "price": "280 000 KÄŤ",
+  "heroImage": "/images/artworks/monolit-vii.jpg",
   "galleryImages": [
     {
-      "url": "https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85",
+      "url": "/images/artworks/monolit-vii.jpg",
       "alt": "Monolit VII - celkový pohled",
       "label": "Celkový pohled"
-    },
-    {
-      "url": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Monolit VII - detail bronzové patiny",
-      "label": "Detail patiny"
-    },
-    {
-      "url": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1400&q=85",
-      "alt": "Monolit VII - profil a plasticita",
-      "label": "Profil a plasticita"
     }
   ],
   "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-white-marble-statue-in-a-museum-41481-large.mp4",
