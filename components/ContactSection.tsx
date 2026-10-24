@@ -1,7 +1,14 @@
 import React from 'react';
 import { MapPin, Mail, Phone, Clock, ArrowUpRight, Camera } from 'lucide-react';
+import { SiteSettings } from '@/lib/schemas';
 
-export const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  settings: SiteSettings | null;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
+  if (!settings) return null;
+
   return (
     <section id="kontakt" className="py-20 bg-[#F4F2EE] border-b border-[#E5E2DA]">
       <div className="max-w-7xl mx-auto px-6">
@@ -24,24 +31,26 @@ export const ContactSection: React.FC = () => {
                 <MapPin className="w-4 h-4 text-[#2D4F44] mt-0.5 flex-shrink-0" />
                 <div>
                   <strong className="text-[#121214] block">Sochařský ateliér Viktor Marek</strong>
-                  <span className="text-[#666560]">Osadní 26, 170 00 Praha 7 – Holešovice</span>
+                  <span className="text-[#666560]">
+                    {settings.studioAddress.street}, {settings.studioAddress.zip} {settings.studioAddress.city}
+                  </span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#2D4F44] flex-shrink-0" />
                 <a
-                  href="mailto:atelier@viktormarek.cz"
+                  href={`mailto:${settings.contactEmail}`}
                   className="text-[#121214] hover:underline"
                 >
-                  atelier@viktormarek.cz
+                  {settings.contactEmail}
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#2D4F44] flex-shrink-0" />
-                <a href="tel:+420777123456" className="text-[#121214] hover:underline">
-                  +420 777 123 456
+                <a href={`tel:${settings.contactPhone.replace(/\s+/g, '')}`} className="text-[#121214] hover:underline">
+                  {settings.contactPhone}
                 </a>
               </div>
 
@@ -66,22 +75,26 @@ export const ContactSection: React.FC = () => {
             </p>
 
             <div className="pt-2 border-t border-[#E5E2DA] flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-2 text-xs text-[#121214]">
-                <Camera className="w-4 h-4 text-[#2D4F44]" />
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline flex items-center gap-1 font-medium"
-                >
-                  @viktormarek.sculpture
-                  <ArrowUpRight className="w-3 h-3 text-[#98968F]" />
-                </a>
-              </div>
+              {settings.socialLinks.instagram ? (
+                <div className="flex items-center gap-2 text-xs text-[#121214]">
+                  <Camera className="w-4 h-4 text-[#2D4F44]" />
+                  <a
+                    href={settings.socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline flex items-center gap-1 font-medium"
+                  >
+                    @viktormarek.sculpture
+                    <ArrowUpRight className="w-3 h-3 text-[#98968F]" />
+                  </a>
+                </div>
+              ) : null}
 
-              <span className="text-[11px] text-[#98968F]">
-                IČ: 87654321 · Zapsáno v rejstříku
-              </span>
+              {settings.companyId ? (
+                <span className="text-[11px] text-[#98968F]">
+                  {settings.companyId}
+                </span>
+              ) : null}
             </div>
           </div>
         </div>

@@ -33,11 +33,11 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
 
   if (!artwork) return null;
 
-  const currentImage = artwork.images[selectedImageIndex] || {
-    url: artwork.primaryImage,
-    alt: artwork.title,
-    label: 'Pohled',
-  };
+  const images = artwork.galleryImages && artwork.galleryImages.length > 0
+    ? artwork.galleryImages
+    : [{ url: artwork.heroImage, alt: artwork.title, label: 'Celkový pohled' }];
+
+  const currentImage = images[selectedImageIndex] || images[0];
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -122,9 +122,9 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               </div>
 
               {/* Angle Selector Thumbnails */}
-              {!isVideoMode && artwork.images.length > 1 && (
+              {!isVideoMode && images.length > 1 && (
                 <div className="flex items-center gap-3 overflow-x-auto pb-1">
-                  {artwork.images.map((img, idx) => (
+                  {images.map((img, idx) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedImageIndex(idx)}

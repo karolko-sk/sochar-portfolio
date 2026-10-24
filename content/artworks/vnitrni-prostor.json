@@ -1,0 +1,37 @@
+{
+  "id": "vnitrni-prostor",
+  "slug": "vnitrni-prostor",
+  "code": "VM-04",
+  "title": "Vnitřní prostor",
+  "subtitle": "Světelná refrakce",
+  "year": 2024,
+  "category": "steel-glass",
+  "material": "Tavené hutní sklo v kouřovém tónu, kouřový dubový masiv",
+  "dimensions": {
+    "height": 54,
+    "width": 38,
+    "depth": 32,
+    "weight": 26
+  },
+  "description": "Optický monolit z taveného skla usazený do hluboce kartáčovaného dubového dřeva. Světlo procházející skleněným jádrem vrhá na okolní stěny proměnlivé prismatické odlesky.",
+  "curatorNote": "Práce realizovaná ve spolupráci se sklářskými mistry v Železném Brodě.",
+  "status": "available",
+  "priceMode": "fixed",
+  "price": "165 000 Kč",
+  "heroImage": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1400&q=85",
+  "galleryImages": [
+    {
+      "url": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Vnitřní prostor - refrakce světla ve skle",
+      "label": "Průchod světla"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Vnitřní prostor - usazení do dřeva",
+      "label": "Detail dubového soklu"
+    }
+  ],
+  "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-reflection-of-light-on-a-museum-sculpture-41484-large.mp4",
+  "featured": false,
+  "sortOrder": 4
+}

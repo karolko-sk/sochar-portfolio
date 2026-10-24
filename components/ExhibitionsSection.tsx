@@ -11,8 +11,10 @@ interface ExhibitionsSectionProps {
 export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
   exhibitions,
 }) => {
-  const upcoming = exhibitions.find((e) => e.status === 'upcoming');
-  const past = exhibitions.filter((e) => e.status === 'past');
+  const todayStr = new Date().toISOString().split('T')[0];
+  // Derived upcoming exhibition based on date invariant
+  const upcoming = exhibitions.find((e) => e.endDate >= todayStr) || exhibitions[0];
+  const past = exhibitions.filter((e) => e.id !== upcoming?.id);
 
   return (
     <section id="vystavy" className="py-20 border-b border-[#E5E2DA]">
@@ -52,7 +54,7 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
                 <div className="pt-2 flex flex-wrap items-center gap-6 text-xs text-[#121214]">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-[#2D4F44]" />
-                    <span className="font-medium">{upcoming.dates}</span>
+                    <span className="font-medium">{upcoming.datesFormatted}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-[#2D4F44]" />
@@ -67,9 +69,9 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
               </div>
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-                {upcoming.googleCalendarUrl && (
+                {upcoming.externalEventUrl && (
                   <a
-                    href={upcoming.googleCalendarUrl}
+                    href={upcoming.externalEventUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium text-center hover:bg-black transition-colors flex items-center justify-center gap-2"
@@ -106,7 +108,7 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
                 className="py-5 grid grid-cols-1 md:grid-cols-12 gap-4 items-center hover:bg-white/40 transition-colors px-2"
               >
                 <div className="md:col-span-3 text-xs font-mono text-[#666560]">
-                  {item.dates}
+                  {item.datesFormatted}
                 </div>
                 <div className="md:col-span-5">
                   <h5 className="font-medium text-sm text-[#121214]">

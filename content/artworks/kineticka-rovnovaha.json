@@ -1,0 +1,31 @@
+{
+  "id": "kineticka-rovnovaha",
+  "slug": "kineticka-rovnovaha",
+  "code": "VM-05",
+  "title": "Kinetická rovnováha",
+  "subtitle": "Gravitační osa",
+  "year": 2022,
+  "category": "steel-glass",
+  "material": "Kovaná konstrukční ocel, grafitový mikroskopický nátěr",
+  "dimensions": {
+    "height": 215,
+    "width": 90,
+    "depth": 60,
+    "weight": 115
+  },
+  "description": "Prostorové těleso balancující na jediném kaleném hrotu. I přes značnou hmotnost ocelové hmoty reaguje na dotek ruky jemným pomalým houpáním.",
+  "curatorNote": "Představeno na bienále v Linci, následně zakoupeno rakouskou nadací současného umění.",
+  "status": "sold",
+  "priceMode": "hidden",
+  "provenance": "Zahraniční soukromá sbírka, Vídeň",
+  "heroImage": "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85",
+  "galleryImages": [
+    {
+      "url": "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Kinetická rovnováha - vertikální kompozice",
+      "label": "Celkový pohled"
+    }
+  ],
+  "featured": false,
+  "sortOrder": 5
+}

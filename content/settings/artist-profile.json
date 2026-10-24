@@ -1,0 +1,43 @@
+{
+  "name": "MgA. Viktor Marek",
+  "birthYear": 1981,
+  "manifestoHeading": "Hmota, prostor a vnitřní napětí",
+  "manifestoText": [
+    "Viktor Marek absolvoval Akademii výtvarných umění v Praze v Ateliéru figurálního sochařství a monumentální tvorby. Ve své práci se dlouhodobě soustředí na hledání hranice mezi figurálním odkazem a radikální abstrakcí.",
+    "Základem jeho tvorby je přímý dialog s materiálem. Nepoužívá 3D tisk ani digitální prefabrikaci – každá skulptura vzniká fyzickým opracováním kamenného bloku, svařováním a patinováním kovů či litím bronzu do ztracených forem v rodinných slévárnách."
+  ],
+  "manifestoQuote": "Socha není dekorací prostoru. Je to bod, který prostor nově definuje a nutí člověka zpomalit a vnímat gravitaci vlastního těla.",
+  "portraitImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=85",
+  "catalogPdfUrl": "",
+  "education": [
+    {
+      "period": "2001–2007",
+      "title": "Akademie výtvarných umění v Praze (AVU)"
+    },
+    {
+      "period": "2005",
+      "title": "Stáž na Universität der Künste Berlin (Sochařství a instalace)"
+    }
+  ],
+  "collections": [
+    {
+      "title": "Galerie hlavního města Prahy (GHMP)"
+    },
+    {
+      "title": "Nadace pro současné umění Vídeň"
+    },
+    {
+      "title": "Soukromé sbírky v Praze, Berlíně, Curychu a Bratislavě"
+    }
+  ],
+  "awards": [
+    {
+      "year": 2023,
+      "title": "Cena kritiky za sochařské dílo roku (Bienále Brno)"
+    },
+    {
+      "year": 2019,
+      "title": "Mezinárodní sochařské sympozium Carrara, Itálie"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "torzo-pameti",
+  "slug": "torzo-pameti",
+  "code": "VM-07",
+  "title": "Torzo paměti",
+  "subtitle": "Hutná matériovost",
+  "year": 2021,
+  "category": "bronze",
+  "material": "Šedá litina, zrnitý povrch, přírodní včelí vosk",
+  "dimensions": {
+    "height": 95,
+    "width": 48,
+    "depth": 36,
+    "weight": 78
+  },
+  "description": "Litinový odlitek ze ztracené voskové formy. Povrch si uchoval hrubou texturu licího písku a byl konzervován horkým včelím voskem s grafitovým pigmentem.",
+  "curatorNote": "Základní kámen raného cyklu „Archeologie hmoty“.",
+  "status": "sold",
+  "priceMode": "hidden",
+  "provenance": "Soukromá sbírka, Brno",
+  "heroImage": "https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85",
+  "galleryImages": [
+    {
+      "url": "https://images.unsplash.com/photo-1544413660-299165566b1d?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Torzo paměti - litina",
+      "label": "Celkový pohled"
+    }
+  ],
+  "featured": false,
+  "sortOrder": 7
+}

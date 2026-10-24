@@ -47,7 +47,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
         className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] transition-colors cursor-pointer overflow-hidden"
       >
         <img
-          src={artwork.primaryImage}
+          src={artwork.heroImage}
           alt={artwork.title}
           className="w-full h-full object-cover object-center grayscale contrast-105 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
         />

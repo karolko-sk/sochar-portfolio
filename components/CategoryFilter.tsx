@@ -1,10 +1,10 @@
 import React from 'react';
-import { MaterialCategory } from '@/types';
+import { FilterCategory } from '@/types';
 
 interface CategoryFilterProps {
-  activeCategory: MaterialCategory;
-  onSelectCategory: (category: MaterialCategory) => void;
-  counts: Record<MaterialCategory, number>;
+  activeCategory: FilterCategory;
+  onSelectCategory: (category: FilterCategory) => void;
+  counts: Record<FilterCategory, number>;
 }
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({
@@ -12,7 +12,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onSelectCategory,
   counts,
 }) => {
-  const categories: { key: MaterialCategory; label: string }[] = [
+  const categories: { key: FilterCategory; label: string }[] = [
     { key: 'all', label: 'Všechna díla' },
     { key: 'available', label: 'K dispozici' },
     { key: 'bronze', label: 'Patinovaný bronz' },

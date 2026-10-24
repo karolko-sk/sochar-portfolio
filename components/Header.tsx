@@ -1,19 +1,13 @@
 'use client';
 
 import React from 'react';
-import { SlidersHorizontal, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Lock } from 'lucide-react';
 
 interface HeaderProps {
-  isAdminOpen: boolean;
-  onToggleAdmin: () => void;
   availableCount: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  isAdminOpen,
-  onToggleAdmin,
-  availableCount,
-}) => {
+export const Header: React.FC<HeaderProps> = ({ availableCount }) => {
   return (
     <header className="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E5E2DA]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -65,21 +59,17 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
         </nav>
 
-        {/* Action Controls & Admin Studio Trigger */}
+        {/* Author / Operator CMS Access */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={onToggleAdmin}
-            className={`px-3 py-1.5 text-xs font-medium uppercase tracking-wider flex items-center gap-2 border transition-all ${
-              isAdminOpen
-                ? 'bg-[#121214] text-white border-[#121214]'
-                : 'bg-white/80 text-[#666560] border-[#D4D0C5] hover:border-[#121214] hover:text-[#121214]'
-            }`}
-            title="Kliknutím otevřete autorské editační rozhraní"
+          <a
+            href="/keystatic"
+            className="px-3.5 py-1.5 text-xs font-medium uppercase tracking-wider flex items-center gap-2 border bg-white/90 text-[#121214] border-[#D4D0C5] hover:border-[#121214] hover:bg-[#121214] hover:text-white transition-all shadow-xs"
+            title="Přihlásit se do správy obsahu (Keystatic CMS)"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Režim autora</span>
-            <span className="sm:hidden">Admin</span>
-          </button>
+            <Lock className="w-3 h-3 text-[#2D4F44]" />
+            <span className="hidden sm:inline">Správa obsahu (CMS)</span>
+            <span className="sm:hidden">CMS</span>
+          </a>
         </div>
       </div>
     </header>

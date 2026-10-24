@@ -1,0 +1,36 @@
+{
+  "id": "cortenova-vlna",
+  "slug": "cortenova-vlna",
+  "code": "VM-03",
+  "title": "Cortenová vlna",
+  "subtitle": "Exteriérová dynamika",
+  "year": 2024,
+  "category": "steel-glass",
+  "material": "Svařovaná ocel Corten s přirozenou stabilizovanou rzí",
+  "dimensions": {
+    "height": 145,
+    "width": 70,
+    "depth": 55,
+    "weight": 85
+  },
+  "description": "Prostorová křivka tvarovaná ze tří masivních plátů kortenové oceli. Dílo je konstruováno pro venkovní umístění, kde vlivem srážek a slunce neustále mění barevný odstín sametové rzi.",
+  "curatorNote": "Rezervováno pro privátní rezidenční zahradu v Průhonicích. Možnost objednání autorské variace.",
+  "status": "reserved",
+  "priceMode": "fixed",
+  "price": "210 000 Kč",
+  "heroImage": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85",
+  "galleryImages": [
+    {
+      "url": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Cortenová vlna - venkovní instalace",
+      "label": "Exteriérový záběr"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Cortenová vlna - detail svařované hrany",
+      "label": "Detail rzi a hrany"
+    }
+  ],
+  "featured": false,
+  "sortOrder": 3
+}

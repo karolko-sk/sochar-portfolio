@@ -81,7 +81,7 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
             >
               <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
                 <img
-                  src={featuredArtwork.primaryImage}
+                  src={featuredArtwork.heroImage}
                   alt={featuredArtwork.title}
                   className="w-full h-full object-cover object-center grayscale contrast-105 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />

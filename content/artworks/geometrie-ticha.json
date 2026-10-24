@@ -1,0 +1,31 @@
+{
+  "id": "geometrie-ticha",
+  "slug": "geometrie-ticha",
+  "code": "VM-06",
+  "title": "Geometrie ticha",
+  "subtitle": "Architektonický rytmus",
+  "year": 2024,
+  "category": "stone",
+  "material": "Leštěný římský travertin, vkládaná patinovaná mosaz",
+  "dimensions": {
+    "height": 82,
+    "width": 34,
+    "depth": 30,
+    "weight": 48
+  },
+  "description": "Striktní geometrické těleso s pórovitou texturou travertinu, do které jsou zapuštěny tenké mosazné proužky. Každá ze čtyř stran nabízí jinou prostorovou kompozici.",
+  "curatorNote": "Novinka z ateliéru, dokončeno v září 2024. Doporučeno do minimalistických interiérů.",
+  "status": "available",
+  "priceMode": "on_request",
+  "price": "Cena na dotaz",
+  "heroImage": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85",
+  "galleryImages": [
+    {
+      "url": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1400&q=85",
+      "alt": "Geometrie ticha - travertin a mosaz",
+      "label": "Čelní pohled"
+    }
+  ],
+  "featured": false,
+  "sortOrder": 6
+}

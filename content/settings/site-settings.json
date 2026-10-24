@@ -1,0 +1,16 @@
+{
+  "siteTitle": "Viktor Marek · Sochařský ateliér & Galerie",
+  "tagline": "Sochařský ateliér & Galerie moderního sochařství",
+  "contactEmail": "atelier@viktormarek.cz",
+  "contactPhone": "+420 777 123 456",
+  "studioAddress": {
+    "street": "Osadní 26",
+    "city": "Praha 7 – Holešovice",
+    "zip": "170 00"
+  },
+  "socialLinks": {
+    "instagram": "https://instagram.com/viktormarek.sculpture"
+  },
+  "inquiryNotice": "Odeslání je nezávazné. Autor Vás bude osobně kontaktovat do 24 hodin.",
+  "companyId": "IČ: 87654321 · Zapsáno v rejstříku"
+}
