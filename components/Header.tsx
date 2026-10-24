@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, Lock } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface HeaderProps {
   availableCount: number;
@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ availableCount }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm tracking-wide">
+        <nav className="flex items-center space-x-6 md:space-x-8 text-sm tracking-wide">
           <a
             href="#dila"
             className="text-[#121214] hover:text-[#666560] transition-colors relative py-1"
@@ -34,19 +34,19 @@ export const Header: React.FC<HeaderProps> = ({ availableCount }) => {
           </a>
           <a
             href="#archiv"
-            className="text-[#666560] hover:text-[#121214] transition-colors"
+            className="hidden sm:inline-block text-[#666560] hover:text-[#121214] transition-colors"
           >
             Archiv realizací
           </a>
           <a
             href="#vystavy"
-            className="text-[#666560] hover:text-[#121214] transition-colors"
+            className="hidden md:inline-block text-[#666560] hover:text-[#121214] transition-colors"
           >
             Vernisáže & Výstavy
           </a>
           <a
             href="#biografie"
-            className="text-[#666560] hover:text-[#121214] transition-colors"
+            className="hidden md:inline-block text-[#666560] hover:text-[#121214] transition-colors"
           >
             Biografie
           </a>
@@ -58,19 +58,6 @@ export const Header: React.FC<HeaderProps> = ({ availableCount }) => {
             <ArrowUpRight className="w-3.5 h-3.5 text-[#98968F]" />
           </a>
         </nav>
-
-        {/* Author / Operator CMS Access */}
-        <div className="flex items-center gap-3">
-          <a
-            href="/keystatic"
-            className="px-3.5 py-1.5 text-xs font-medium uppercase tracking-wider flex items-center gap-2 border bg-white/90 text-[#121214] border-[#D4D0C5] hover:border-[#121214] hover:bg-[#121214] hover:text-white transition-all shadow-xs"
-            title="Přihlásit se do správy obsahu (Keystatic CMS)"
-          >
-            <Lock className="w-3 h-3 text-[#2D4F44]" />
-            <span className="hidden sm:inline">Správa obsahu (CMS)</span>
-            <span className="sm:hidden">CMS</span>
-          </a>
-        </div>
       </div>
     </header>
   );

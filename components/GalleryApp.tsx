@@ -11,7 +11,7 @@ import { ExhibitionsSection } from '@/components/ExhibitionsSection';
 import { BiographySection } from '@/components/BiographySection';
 import { ContactSection } from '@/components/ContactSection';
 import { Artwork, Exhibition, ArtistProfile, SiteSettings, FilterCategory } from '@/types';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Lock } from 'lucide-react';
 
 interface GalleryAppProps {
   initialArtworks: Artwork[];
@@ -203,10 +203,13 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
           </div>
 
           <div className="flex items-center gap-3 text-[11px] text-[#98968F]">
-            <span>Git-backed Keystatic CMS</span>
-            <span className="h-3 w-px bg-[#E5E2DA]" />
-            <a href="/keystatic" className="hover:text-[#121214] underline underline-offset-2">
-              Přihlásit do CMS
+            <a
+              href="/keystatic"
+              className="px-3 py-1.5 border border-[#D4D0C5] bg-white text-[#121214] hover:bg-[#121214] hover:text-white transition-all flex items-center gap-1.5 tracking-wider text-[11px] shadow-2xs"
+              title="Přihlásit se do správy obsahu (Keystatic CMS)"
+            >
+              <Lock className="w-3 h-3 text-[#2D4F44]" />
+              <span>Správa obsahu (CMS)</span>
             </a>
           </div>
         </div>
