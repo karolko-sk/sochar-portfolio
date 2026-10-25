@@ -77,9 +77,7 @@ const jsonLd = {
         'Český moderní sochař tvořící monumentální i komorní skulptury z patinovaného bronzu, cortenové oceli a mramoru.',
       url: 'https://sochar-portfolio.vercel.app',
       image: 'https://sochar-portfolio.vercel.app/images/artist-portrait.jpg',
-      sameAs: [
-        'https://instagram.com/viktor.marek.sculptor',
-      ],
+      sameAs: ['https://instagram.com/viktor.marek.sculptor'],
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Dělnická 43',
@@ -119,8 +117,7 @@ const jsonLd = {
       url: 'https://sochar-portfolio.vercel.app',
       name: 'MgA. Viktor Marek · Sochařský ateliér',
       inLanguage: 'cs-CZ',
-      description:
-        'Oficiální online portfolio a galerie autorských plastik MgA. Viktora Marka.',
+      description: 'Oficiální online portfolio a galerie autorských plastik MgA. Viktora Marka.',
       publisher: {
         '@id': 'https://sochar-portfolio.vercel.app/#artist',
       },
@@ -136,14 +133,9 @@ export default function RootLayout({
   return (
     <html lang="cs" className="scroll-smooth">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </head>
-      <body className="antialiased min-h-screen bg-[#FAF9F6] text-[#121214]">
-        {children}
-      </body>
+      <body className="antialiased min-h-screen bg-[#FAF9F6] text-[#121214]">{children}</body>
     </html>
   );
 }
