@@ -1,6 +1,4 @@
 packages:
   - '.'
-overrides:
-  baseline-browser-mapping: '2.11.31'
 allowBuilds:
   sharp: true
