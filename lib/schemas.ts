@@ -1,27 +1,22 @@
 import { z } from 'zod';
 
-export const ArtworkStatusSchema = z.enum([
-  'available',
-  'reserved',
-  'sold',
-  'not_for_sale',
-]);
+const ArtworkStatusSchema = z.enum(['available', 'reserved', 'sold', 'not_for_sale']);
 export type ArtworkStatus = z.infer<typeof ArtworkStatusSchema>;
 
-export const PriceModeSchema = z.enum(['fixed', 'on_request', 'hidden']);
+const PriceModeSchema = z.enum(['fixed', 'on_request', 'hidden']);
 export type PriceMode = z.infer<typeof PriceModeSchema>;
 
-export const MaterialCategorySchema = z.enum(['bronze', 'stone', 'steel-glass']);
+const MaterialCategorySchema = z.enum(['bronze', 'stone', 'steel-glass']);
 export type MaterialCategory = z.infer<typeof MaterialCategorySchema>;
 
-export const DimensionsSchema = z.object({
+const DimensionsSchema = z.object({
   height: z.number().positive(),
   width: z.number().positive(),
   depth: z.number().positive(),
   weight: z.number().positive().optional(),
 });
 
-export const GalleryImageSchema = z.object({
+const GalleryImageSchema = z.object({
   url: z.string().min(1),
   alt: z.string().min(1),
   label: z.string().min(1),
@@ -52,7 +47,7 @@ export const ArtworkSchema = z.object({
 
 export type Artwork = z.infer<typeof ArtworkSchema>;
 
-export const ExhibitionTypeSchema = z.enum(['solo', 'group']);
+const ExhibitionTypeSchema = z.enum(['solo', 'group']);
 
 export const ExhibitionSchema = z.object({
   id: z.string().min(1),
@@ -62,7 +57,7 @@ export const ExhibitionSchema = z.object({
   venue: z.string().min(1),
   city: z.string().min(1),
   startDate: z.string().min(1), // YYYY-MM-DD
-  endDate: z.string().min(1),   // YYYY-MM-DD
+  endDate: z.string().min(1), // YYYY-MM-DD
   datesFormatted: z.string().min(1),
   curator: z.string().min(1),
   description: z.string().min(1),

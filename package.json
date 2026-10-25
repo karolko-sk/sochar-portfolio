@@ -5,19 +5,17 @@
   "packageManager": "pnpm@9.15.9",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -e \"const cp=require('child_process'); process.env.NODE_ENV='production'; const r=cp.spawnSync(process.platform==='win32'?'pnpm.cmd':'pnpm',['exec','next','build','--webpack'],{stdio:'inherit',shell:true,env:process.env}); process.exit(r.status||0)\"",
     "start": "next start",
     "test:content": "node --experimental-strip-types scripts/validate-content.ts"
   },
   "dependencies": {
     "@keystatic/core": "^0.6.9",
     "@keystatic/next": "^5.0.5",
-    "clsx": "^2.1.1",
     "lucide-react": "^1.16.0",
     "next": "16.2.6",
     "react": "^19",
     "react-dom": "^19",
-    "tailwind-merge": "^3.3.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {
