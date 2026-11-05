@@ -68,4 +68,12 @@ describe('Repo Hygiene Cleanup (sculptor-portfolio)', () => {
       expect(rootDepsBlock).not.toMatch(/^\s+tailwind-merge:/m);
     }
   });
+
+  it('[TC-01] Verify AC-NH-01 (sculptor-portfolio): Remediate all 2 grounded finding(s) in 00:root-and-build-config (.dockerignore, Dockerfile)', () => {
+    const dockerignorePath = path.join(ROOT_DIR, '.dockerignore');
+    const dockerfilePath = path.join(ROOT_DIR, 'Dockerfile');
+
+    expect(fs.existsSync(dockerignorePath)).toBe(false);
+    expect(fs.existsSync(dockerfilePath)).toBe(false);
+  });
 });
