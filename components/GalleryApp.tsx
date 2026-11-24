@@ -82,7 +82,7 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#98968F] font-mono">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
                 Ateliérový katalog
               </span>
               <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214] mt-1">
@@ -140,7 +140,7 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
         <div className="max-w-7xl mx-auto px-6">
           <div className="p-8 sm:p-10 bg-white border border-[#E5E2DA] flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2">
-              <span className="text-xs uppercase tracking-widest text-[#98968F] font-mono">
+              <span className="text-xs uppercase tracking-widest text-[#63615B] font-mono">
                 Zastoupení & Sběratelství
               </span>
               <h3 className="font-serif-sculpture text-2xl text-[#121214]">
@@ -179,7 +179,7 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
             <span className="font-serif-sculpture text-lg text-[#121214]">
               {artistProfile?.name || 'VIKTOR MAREK'}
             </span>
-            <span className="text-[11px] uppercase tracking-widest text-[#98968F] mt-0.5">
+            <span className="text-[11px] uppercase tracking-widest text-[#63615B] mt-0.5">
               Sochařský ateliér & Galerie © {new Date().getFullYear()} · Všechna práva vyhrazena
             </span>
           </div>
@@ -202,7 +202,7 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
             </a>
           </div>
 
-          <div className="flex items-center gap-3 text-[11px] text-[#98968F]">
+          <div className="flex items-center gap-3 text-[11px] text-[#63615B]">
             <a
               href="/keystatic"
               className="px-3 py-1.5 border border-[#D4D0C5] bg-white text-[#121214] hover:bg-[#121214] hover:text-white transition-all flex items-center gap-1.5 tracking-wider text-[11px] shadow-2xs"

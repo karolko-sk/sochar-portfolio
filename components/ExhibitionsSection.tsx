@@ -60,7 +60,7 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-[#98968F] font-mono">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
               Kurátorský program
             </span>
             <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214] mt-1">
@@ -143,7 +143,7 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
 
         {/* Past Exhibitions Chronology (Zero-Smog Single Calm Surface) */}
         <div>
-          <h4 className="text-xs uppercase tracking-widest text-[#98968F] font-semibold mb-6">
+          <h4 className="text-xs uppercase tracking-widest text-[#63615B] font-semibold mb-6">
             Historie výstav a sympozií
           </h4>
           <div className="divide-y divide-[#E5E2DA] border-t border-b border-[#E5E2DA]">
