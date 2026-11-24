@@ -98,14 +98,14 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
                 Zavřít
               </button>
             </div>
-            <p className="text-[11px] text-[#98968F] pt-2">
+            <p className="text-[11px] text-[#63615B] pt-2">
               Případně pište přímo na <a href="mailto:atelier@viktormarek.cz" className="underline hover:text-[#121214]">atelier@viktormarek.cz</a> nebo volejte <a href="tel:+420777890123" className="underline hover:text-[#121214]">+420 777 890 123</a>.
             </p>
           </div>
         ) : (
           <div className="space-y-6">
             <div>
-              <span className="text-[11px] uppercase tracking-widest text-[#98968F] font-mono">
+              <span className="text-[11px] uppercase tracking-widest text-[#63615B] font-mono">
                 {artwork.code} · Akviziční formulář
               </span>
               <h3 className="font-serif-sculpture text-2xl text-[#121214] mt-1">
@@ -228,7 +228,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
                 </button>
               </div>
 
-              <p className="text-[11px] text-[#98968F] text-center">
+              <p className="text-[11px] text-[#63615B] text-center">
                 Odeslání je nezávazné. Vaše kontaktní údaje slouží výhradně pro komunikaci s autorem.
               </p>
             </form>
