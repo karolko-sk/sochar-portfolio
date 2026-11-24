@@ -21,6 +21,31 @@ async function validateAllContent() {
   const baseDir = process.cwd();
   let errorsCount = 0;
 
+  // 0. Security invariant: Keystatic route must stay fail-closed
+  const keystaticRoutePath = path.join(baseDir, 'app', 'api', 'keystatic', '[...params]', 'route.ts');
+  if (await pathExists(keystaticRoutePath)) {
+    const routeSrc = await fs.readFile(keystaticRoutePath, 'utf8');
+    const forbidden = ["includes('session')", "includes('keystatic-')", 'x-unauthenticated'];
+    const securityChecks: Array<[string, boolean]> = [
+      ['uses timingSafeEqual', routeSrc.includes('timingSafeEqual')],
+      ['guards GET', /export\s+async\s+function\s+GET[\s\S]*?isAuthorized\(/.test(routeSrc)],
+      ['guards POST', /export\s+async\s+function\s+POST[\s\S]*?isAuthorized\(/.test(routeSrc)],
+      ['no weak substring checks', !forbidden.some((f) => routeSrc.includes(f))],
+      ['does not export raw handler GET', !/export\s+const\s+GET\s*=\s*keystaticHandler/.test(routeSrc)],
+    ];
+    for (const [label, ok] of securityChecks) {
+      if (ok) {
+        console.log(`  ✓ [SECURITY] keystatic route ${label}`);
+      } else {
+        console.error(`  ❌ [SECURITY_INVARIANT] keystatic route violates: ${label}`);
+        errorsCount++;
+      }
+    }
+  } else {
+    console.error('  ❌ [SECURITY_INVARIANT] keystatic route file missing');
+    errorsCount++;
+  }
+
   // 1. Artworks
   const artworksDir = path.join(baseDir, 'content', 'artworks');
   if (await pathExists(artworksDir)) {
