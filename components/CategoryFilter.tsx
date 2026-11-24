@@ -41,7 +41,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               <span>{cat.label}</span>
               <span
                 className={`text-[10px] ${
-                  isActive ? 'text-white/70' : 'text-[#98968F]'
+                  isActive ? 'text-white/70' : 'text-[#63615B]'
                 }`}
               >
                 ({count})

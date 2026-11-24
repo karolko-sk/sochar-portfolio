@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
             {/* Quick Metrics (Zero-Smog Hairline Ledger) */}
             <div className="pt-8 grid grid-cols-3 gap-4 border-t border-[#E5E2DA] text-xs">
               <div>
-                <span className="block text-[#98968F] uppercase tracking-wider text-[10px]">
+                <span className="block text-[#63615B] uppercase tracking-wider text-[10px]">
                   Materiály
                 </span>
                 <span className="font-medium text-[#121214] mt-0.5 block">
@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                 </span>
               </div>
               <div>
-                <span className="block text-[#98968F] uppercase tracking-wider text-[10px]">
+                <span className="block text-[#63615B] uppercase tracking-wider text-[10px]">
                   Zastoupení
                 </span>
                 <span className="font-medium text-[#121214] mt-0.5 block">
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
                 </span>
               </div>
               <div>
-                <span className="block text-[#98968F] uppercase tracking-wider text-[10px]">
+                <span className="block text-[#63615B] uppercase tracking-wider text-[10px]">
                   Ateliér
                 </span>
                 <span className="font-medium text-[#121214] mt-0.5 block">

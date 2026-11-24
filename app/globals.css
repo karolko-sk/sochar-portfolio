@@ -6,7 +6,7 @@
     --canvas-subtle: #F4F2EE;
     --ink: #121214;
     --ink-muted: #666560;
-    --ink-faint: #98968F;
+    --ink-faint: #63615B;
     --hairline: #E5E2DA;
     --hairline-dark: #D4D0C5;
     --accent-patina: #2D4F44;
@@ -28,22 +28,22 @@
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     letter-spacing: -0.015em;
   }
-}
 
-/* Custom scrollbars & focus states */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
+  /* Custom scrollbars & focus states */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
 
-::-webkit-scrollbar-track {
-  background: #F4F2EE;
-}
+  ::-webkit-scrollbar-track {
+    background: #F4F2EE;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #D4D0C5;
-}
+  ::-webkit-scrollbar-thumb {
+    background: #D4D0C5;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #98968F;
+  ::-webkit-scrollbar-thumb:hover {
+    background: #63615B;
+  }
 }

@@ -96,7 +96,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
       {/* Typography & Hairline Ledger */}
       <div className="pt-4 flex flex-col flex-1">
         <div className="flex items-center justify-between gap-2 mb-1.5">
-          <span className="text-[11px] uppercase tracking-wider text-[#98968F]">
+          <span className="text-[11px] uppercase tracking-wider text-[#63615B]">
             {artwork.year} · {getCategoryLabel(artwork.category)}
           </span>
           {getStatusBadge()}
@@ -123,7 +123,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
             <span className="font-medium text-[#121214]">{artwork.price}</span>
           )}
           {artwork.status === 'sold' && artwork.provenance && (
-            <span className="text-[11px] text-[#98968F] truncate max-w-[120px]">
+            <span className="text-[11px] text-[#63615B] truncate max-w-[120px]">
               {artwork.provenance}
             </span>
           )}
