@@ -14,7 +14,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#98968F] font-mono">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
               Osobní setkání
             </span>
             <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214]">
@@ -85,13 +85,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings }) => {
                     className="hover:underline flex items-center gap-1 font-medium"
                   >
                     @viktormarek.sculpture
-                    <ArrowUpRight className="w-3 h-3 text-[#98968F]" />
+                    <ArrowUpRight className="w-3 h-3 text-[#63615B]" />
                   </a>
                 </div>
               ) : null}
 
               {settings.companyId ? (
-                <span className="text-[11px] text-[#98968F]">
+                <span className="text-[11px] text-[#63615B]">
                   {settings.companyId}
                 </span>
               ) : null}

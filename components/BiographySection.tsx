@@ -49,7 +49,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ profile }) =
           {/* Autorský manifest & Strukturované CV */}
           <div className="lg:col-span-7 space-y-8">
             <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#98968F] font-mono">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
                 Autorský manifest
               </span>
               <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214] mt-1">

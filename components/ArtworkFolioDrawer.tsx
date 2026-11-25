@@ -53,7 +53,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
           {/* Header Bar */}
           <div className="px-5 sm:px-6 py-4 border-b border-[#E5E2DA] flex items-center justify-between bg-[#FAF9F6]">
             <div className="flex items-center gap-3">
-              <span className="text-xs uppercase tracking-widest text-[#98968F] font-mono">
+              <span className="text-xs uppercase tracking-widest text-[#63615B] font-mono">
                 {artwork.code}
               </span>
               <span className="h-3 w-px bg-[#E5E2DA]" />
@@ -169,7 +169,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                     V soukromé sbírce
                   </span>
                 )}
-                <span className="text-xs text-[#98968F] font-mono">
+                <span className="text-xs text-[#63615B] font-mono">
                   Rok: {artwork.year}
                 </span>
               </div>
@@ -186,7 +186,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               {/* Price / Provenance Banner */}
               <div className="mt-4 p-4 bg-[#F4F2EE] border-l-2 border-[#121214] flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#98968F] block">
+                  <span className="text-[10px] uppercase tracking-wider text-[#63615B] block">
                     {artwork.status === 'available'
                       ? 'Orientační cena'
                       : artwork.status === 'sold'
@@ -211,7 +211,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
 
             {/* Curatorial Text & Description */}
             <div className="space-y-3 border-t border-[#E5E2DA] pt-6">
-              <h4 className="text-xs uppercase tracking-wider text-[#98968F] font-semibold">
+              <h4 className="text-xs uppercase tracking-wider text-[#63615B] font-semibold">
                 Kurátorský komentář
               </h4>
               <p className="text-sm text-[#121214] leading-relaxed font-light">
@@ -224,12 +224,12 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
 
             {/* Technical Specifications (Hairline Ledger) */}
             <div className="border-t border-[#E5E2DA] pt-6 space-y-4">
-              <h4 className="text-xs uppercase tracking-wider text-[#98968F] font-semibold">
+              <h4 className="text-xs uppercase tracking-wider text-[#63615B] font-semibold">
                 Technická specifikace pro instalaci
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
                     Materiál & Povrch
                   </span>
                   <span className="font-medium text-[#121214] mt-1 block">
@@ -238,7 +238,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 </div>
 
                 <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
                     Rozměry (V × Š × H)
                   </span>
                   <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
@@ -247,7 +247,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 </div>
 
                 <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
                     Celková hmotnost
                   </span>
                   <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
@@ -256,7 +256,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 </div>
 
                 <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#98968F] uppercase tracking-wider text-[10px] block">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
                     Doporučené umístění
                   </span>
                   <span className="font-medium text-[#121214] mt-1 block">
@@ -271,7 +271,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
             {/* Human Scale Comparator Visualizer */}
             <div className="border-t border-[#E5E2DA] pt-6 space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-1">
-                <span className="uppercase tracking-wider text-[#98968F] font-semibold">
+                <span className="uppercase tracking-wider text-[#63615B] font-semibold">
                   Měřítko vůči lidské postavě (180 cm)
                 </span>
                 <span className="text-[#666560] font-mono text-[11px] sm:text-xs">
@@ -284,7 +284,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                   <div className="w-5 h-24 bg-[#D4D0C5] flex items-center justify-center text-[9px] text-[#666560] font-mono">
                     180
                   </div>
-                  <span className="text-[10px] text-[#98968F] mt-1">Postava (180 cm)</span>
+                  <span className="text-[10px] text-[#63615B] mt-1">Postava (180 cm)</span>
                 </div>
 
                 {/* Sculpture representation scaled */}
@@ -342,7 +342,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             )}
-            <p className="text-[11px] text-[#98968F] text-center">
+            <p className="text-[11px] text-[#63615B] text-center">
               Doprava sochy po ČR a instalace na místě po osobní konzultaci s autorem.
             </p>
           </div>

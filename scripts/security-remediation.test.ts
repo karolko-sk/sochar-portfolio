@@ -1,16 +1,18 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import nextConfig from '../next.config.mjs';
 import {
   ArtworkSchema,
   ExhibitionSchema,
   ArtistProfileSchema,
   SiteSettingsSchema,
-} from '../lib/schemas';
-import { getArtworks, getExhibitions, getArtistProfile, getSiteSettings } from '../lib/content';
+} from '../lib/schemas.ts';
+import { getArtworks, getExhibitions, getArtistProfile, getSiteSettings } from '../lib/content.ts';
 
-const ROOT_DIR = path.resolve(__dirname, '..');
+const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function collectSourceFiles(dirPath: string): string[] {
   if (!fs.existsSync(dirPath)) return [];
@@ -30,36 +32,38 @@ function collectSourceFiles(dirPath: string): string[] {
 describe('Security Remediation (sculptor-portfolio): 2 outflow finding(s) [50cb6affd41e]', () => {
   it('TC-01: Verify AC-SEC-01 (sculptor-portfolio): Remediate 1 UNSAFE_XSS_OR_EXTERNAL_SINK finding(s) across [app/layout.tsx]', () => {
     const layoutPath = path.join(ROOT_DIR, 'app', 'layout.tsx');
-    expect(fs.existsSync(layoutPath)).toBe(true);
+    assert.equal(fs.existsSync(layoutPath), true);
 
     const layoutContent = fs.readFileSync(layoutPath, 'utf-8');
-    expect(layoutContent).not.toContain('dangerouslySetInnerHTML');
-    expect(layoutContent).toContain('type="application/ld+json"');
-    expect(layoutContent).toContain('JSON.stringify(jsonLd)');
+    assert.equal(layoutContent.includes('dangerouslySetInnerHTML'), false);
+    assert.equal(layoutContent.includes('type="application/ld+json"'), true);
+    assert.equal(layoutContent.includes('JSON.stringify(jsonLd)'), true);
   });
 
   it('TC-02: Verify AC-SEC-02 (sculptor-portfolio): Remediate 1 MISSING_SECURITY_HEADERS finding(s) across [next.config.mjs]', async () => {
     const nextConfigPath = path.join(ROOT_DIR, 'next.config.mjs');
-    expect(fs.existsSync(nextConfigPath)).toBe(true);
+    assert.equal(fs.existsSync(nextConfigPath), true);
 
     const nextConfigContent = fs.readFileSync(nextConfigPath, 'utf-8');
-    expect(nextConfigContent).toContain('X-Content-Type-Options');
-    expect(nextConfigContent).toContain('X-Frame-Options');
-    expect(nextConfigContent).toContain('Referrer-Policy');
+    assert.equal(nextConfigContent.includes('X-Content-Type-Options'), true);
+    assert.equal(nextConfigContent.includes('X-Frame-Options'), true);
+    assert.equal(nextConfigContent.includes('Referrer-Policy'), true);
 
-    expect(typeof nextConfig.headers).toBe('function');
-    const rules = await nextConfig.headers!();
-    expect(Array.isArray(rules)).toBe(true);
-    expect(rules.length).toBeGreaterThan(0);
+    assert.equal(typeof nextConfig.headers, 'function');
+    const rules = await nextConfig.headers();
+    assert.equal(Array.isArray(rules), true);
+    assert.ok(rules.length > 0);
 
     const allHeaders = rules.flatMap(
       (rule: { headers: Array<{ key: string; value: string }> }) => rule.headers
     );
     const headerMap = new Map(allHeaders.map((h) => [h.key, h.value]));
 
-    expect(headerMap.get('X-Content-Type-Options')).toBe('nosniff');
-    expect(headerMap.get('X-Frame-Options')).toMatch(/^(DENY|SAMEORIGIN)$/);
-    expect(headerMap.get('Referrer-Policy')).toBe('strict-origin-when-cross-origin');
+    assert.equal(headerMap.get('X-Content-Type-Options'), 'nosniff');
+    const xFrameOptions = headerMap.get('X-Frame-Options');
+    assert.equal(typeof xFrameOptions, 'string');
+    assert.match(xFrameOptions as string, /^(DENY|SAMEORIGIN)$/);
+    assert.equal(headerMap.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
   });
 
   it('TC-03: Form validation & negative input rejection without corrupting state', () => {
@@ -70,9 +74,9 @@ describe('Security Remediation (sculptor-portfolio): 2 outflow finding(s) [50cb6
       year: 1500,
     };
     const artworkResult = ArtworkSchema.safeParse(invalidArtwork);
-    expect(artworkResult.success).toBe(false);
+    assert.equal(artworkResult.success, false);
     if (!artworkResult.success) {
-      expect(artworkResult.error.issues.length).toBeGreaterThan(0);
+      assert.ok(artworkResult.error.issues.length > 0);
     }
 
     const invalidSettings = {
@@ -82,13 +86,13 @@ describe('Security Remediation (sculptor-portfolio): 2 outflow finding(s) [50cb6
       contactPhone: '',
     };
     const settingsResult = SiteSettingsSchema.safeParse(invalidSettings);
-    expect(settingsResult.success).toBe(false);
+    assert.equal(settingsResult.success, false);
 
     const invalidExhibition = { id: '', slug: '' };
-    expect(ExhibitionSchema.safeParse(invalidExhibition).success).toBe(false);
+    assert.equal(ExhibitionSchema.safeParse(invalidExhibition).success, false);
 
     const invalidProfile = { name: '', birthYear: 1200 };
-    expect(ArtistProfileSchema.safeParse(invalidProfile).success).toBe(false);
+    assert.equal(ArtistProfileSchema.safeParse(invalidProfile).success, false);
   });
 
   it('TC-04: State persistence across full browser reload', async () => {
@@ -102,17 +106,17 @@ describe('Security Remediation (sculptor-portfolio): 2 outflow finding(s) [50cb6
     const [reloadedArtworks, reloadedExhibitions, reloadedProfile, reloadedSettings] =
       await Promise.all([getArtworks(), getExhibitions(), getArtistProfile(), getSiteSettings()]);
 
-    expect(reloadedArtworks.length).toBeGreaterThan(0);
-    expect(reloadedArtworks).toEqual(firstArtworks);
-    expect(reloadedExhibitions).toEqual(firstExhibitions);
-    expect(reloadedProfile).toEqual(firstProfile);
-    expect(reloadedSettings).toEqual(firstSettings);
+    assert.ok(reloadedArtworks.length > 0);
+    assert.deepEqual(reloadedArtworks, firstArtworks);
+    assert.deepEqual(reloadedExhibitions, firstExhibitions);
+    assert.deepEqual(reloadedProfile, firstProfile);
+    assert.deepEqual(reloadedSettings, firstSettings);
   });
 
   it('TC-SEC-01: Security: Client bundle secret isolation & XSS/external sink integrity (sculptor-portfolio)', () => {
     const sourceDirs = ['app', 'components', 'lib'].map((d) => path.join(ROOT_DIR, d));
     const files = sourceDirs.flatMap((d) => collectSourceFiles(d));
-    expect(files.length).toBeGreaterThan(0);
+    assert.ok(files.length > 0);
 
     const forbiddenSecrets = [
       'KEYSTATIC_SECRET',
@@ -123,17 +127,17 @@ describe('Security Remediation (sculptor-portfolio): 2 outflow finding(s) [50cb6
 
     for (const file of files) {
       const content = fs.readFileSync(file, 'utf-8');
-      expect(content).not.toContain('dangerouslySetInnerHTML');
+      assert.equal(content.includes('dangerouslySetInnerHTML'), false);
 
       const isClientModule = /^\s*['"]use client['"]/m.test(content);
       if (isClientModule) {
         for (const secret of forbiddenSecrets) {
-          expect(content).not.toContain(secret);
+          assert.equal(content.includes(secret), false);
         }
       }
 
       for (const secret of forbiddenSecrets) {
-        expect(content).not.toContain(`NEXT_PUBLIC_${secret}`);
+        assert.equal(content.includes(`NEXT_PUBLIC_${secret}`), false);
       }
     }
   });

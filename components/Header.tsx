@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ availableCount }) => {
             className="text-[#666560] hover:text-[#121214] transition-colors flex items-center gap-1"
           >
             Ateliér
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#98968F]" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#63615B]" />
           </a>
         </nav>
       </div>
