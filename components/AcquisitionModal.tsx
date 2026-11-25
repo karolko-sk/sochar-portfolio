@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Check, Mail, Phone, Calendar, ArrowRight } from 'lucide-react';
-import { Artwork, InquiryFormData } from '@/types';
+import { X, Check, Mail, ArrowRight } from 'lucide-react';
+import { Artwork } from '@/types';
 
 interface AcquisitionModalProps {
   artwork: Artwork | null;
@@ -62,9 +62,11 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
       {/* Modal Surface (Zero-Smog: 1 outer border, clean hairlines) */}
       <div className="relative bg-[#FAF9F6] border border-[#E5E2DA] max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10">
         <button
+          type="button"
           onClick={onClose}
           className="absolute top-5 right-5 p-2 text-[#666560] hover:text-[#121214] hover:bg-[#F4F2EE] transition-colors"
           title="Zavřít formulář"
+          aria-label="Zavřít formulář"
         >
           <X className="w-5 h-5" />
         </button>
@@ -92,6 +94,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
                 </a>
               )}
               <button
+                type="button"
                 onClick={onClose}
                 className="w-full sm:w-auto px-5 py-2.5 border border-[#D4D0C5] text-[#121214] text-xs uppercase tracking-wider font-medium hover:border-[#121214] transition-colors"
               >
@@ -145,56 +148,79 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1">
+                <label
+                  htmlFor="acquisition-name"
+                  className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1"
+                >
                   Jméno a příjmení *
                 </label>
                 <input
+                  id="acquisition-name"
+                  name="name"
                   type="text"
+                  autoComplete="name"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="např. Ing. Petr Novák"
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] focus:outline-none focus:border-[#121214]"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] placeholder:text-[#8A8880] transition-colors focus:outline-none focus:border-[#121214]"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1">
+                  <label
+                    htmlFor="acquisition-email"
+                    className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1"
+                  >
                     E-mailová adresa *
                   </label>
                   <input
+                    id="acquisition-email"
+                    name="email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="vas@email.cz"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] focus:outline-none focus:border-[#121214]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] placeholder:text-[#8A8880] transition-colors focus:outline-none focus:border-[#121214]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1">
+                  <label
+                    htmlFor="acquisition-phone"
+                    className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1"
+                  >
                     Telefonní číslo *
                   </label>
                   <input
+                    id="acquisition-phone"
+                    name="phone"
                     type="tel"
+                    autoComplete="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+420 777 000 000"
-                    className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] focus:outline-none focus:border-[#121214]"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] placeholder:text-[#8A8880] transition-colors focus:outline-none focus:border-[#121214]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1">
+                <label
+                  htmlFor="acquisition-message"
+                  className="block text-[11px] uppercase tracking-wider text-[#666560] mb-1"
+                >
                   {inquiryType === 'purchase'
                     ? 'Doplňující dotaz (např. doprava, umístění, fakturace)'
                     : 'Preferovaný termín návštěvy ateliéru'}
                 </label>
                 <textarea
+                  id="acquisition-message"
+                  name="message"
                   rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -203,7 +229,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
                       ? 'Rád bych se informoval o možnostech instalace v interiéru rodinného domu...'
                       : 'Mám zájem o prohlídku díla v ateliéru v Holešovicích příští týden...'
                   }
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] focus:outline-none focus:border-[#121214] resize-none"
+                  className="w-full px-3.5 py-2.5 bg-white border border-[#D4D0C5] text-sm text-[#121214] placeholder:text-[#8A8880] transition-colors focus:outline-none focus:border-[#121214] resize-none"
                 />
               </div>
 
