@@ -1,5 +1,19 @@
 import type { Metadata, Viewport } from 'next';
+import { Fraunces, Inter } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin', 'latin-ext'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   themeColor: '#FAF9F6',
@@ -137,11 +151,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className="scroll-smooth">
+    <html lang="cs" className={`scroll-smooth ${inter.variable} ${fraunces.variable}`}>
       <head>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </head>
-      <body className="antialiased min-h-screen bg-[#FAF9F6] text-[#121214]">{children}</body>
+      <body className="font-sans antialiased min-h-screen bg-[#FAF9F6] text-[#121214]">{children}</body>
     </html>
   );
 }
