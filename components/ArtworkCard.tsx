@@ -67,8 +67,8 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
 
         {/* Video / 360 Indicator if available */}
         {artwork.videoUrl && (
-          <div className="absolute top-3 right-3 px-2 py-1 bg-black/70 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider flex items-center gap-1">
-            <Video className="w-3 h-3" />
+          <div className="absolute top-3 right-3 px-2 py-1 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-[10px] uppercase tracking-wider flex items-center gap-1">
+            <Video className="w-3 h-3 text-[#121214]" />
             <span>Video loop</span>
           </div>
         )}
@@ -85,7 +85,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
               e.stopPropagation();
               onOpen(artwork);
             }}
-            className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] text-xs uppercase tracking-wider font-medium shadow-md flex items-center gap-2 hover:bg-white transition-colors"
+            className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white transition-colors"
           >
             <Maximize2 className="w-3.5 h-3.5" />
             <span>Detail plastiky</span>
