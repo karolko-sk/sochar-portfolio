@@ -76,7 +76,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
             <div className="w-12 h-12 rounded-full bg-[#EBF2EF] text-[#2D4F44] mx-auto flex items-center justify-center border border-[#2D4F44]/20">
               <Check className="w-6 h-6" />
             </div>
-            <h3 className="font-serif-sculpture text-2xl text-[#121214]">
+            <h3 className="font-serif-sculpture text-xl text-[#121214]">
               Poptávka byla připravena k odeslání
             </h3>
             <p className="text-sm text-[#666560] leading-relaxed max-w-sm mx-auto">
@@ -111,7 +111,7 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
               <span className="text-[11px] uppercase tracking-widest text-[#63615B] font-mono">
                 {artwork.code} · Akviziční formulář
               </span>
-              <h3 className="font-serif-sculpture text-2xl text-[#121214] mt-1">
+              <h3 className="font-serif-sculpture text-xl text-[#121214] mt-1">
                 {artwork.title}
               </h3>
               <p className="text-xs text-[#666560] mt-0.5">
