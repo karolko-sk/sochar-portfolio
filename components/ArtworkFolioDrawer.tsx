@@ -227,39 +227,39 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               <h4 className="text-xs uppercase tracking-wider text-[#63615B] font-semibold">
                 Technická specifikace pro instalaci
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
+              <div className="space-y-0 text-xs">
+                <div className="py-3 border-b border-[#E5E2DA] flex items-center justify-between">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px]">
                     Materiál & Povrch
                   </span>
-                  <span className="font-medium text-[#121214] mt-1 block">
+                  <span className="font-medium text-[#121214]">
                     {artwork.material}
                   </span>
                 </div>
 
-                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
+                <div className="py-3 border-b border-[#E5E2DA] flex items-center justify-between">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px]">
                     Rozměry (V × Š × H)
                   </span>
-                  <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
+                  <span className="font-mono font-medium text-[#121214] whitespace-nowrap">
                     {artwork.dimensions.height} × {artwork.dimensions.width} × {artwork.dimensions.depth}&nbsp;cm
                   </span>
                 </div>
 
-                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
+                <div className="py-3 border-b border-[#E5E2DA] flex items-center justify-between">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px]">
                     Celková hmotnost
                   </span>
-                  <span className="font-mono font-medium text-[#121214] mt-1 block whitespace-nowrap">
+                  <span className="font-mono font-medium text-[#121214] whitespace-nowrap">
                     {artwork.dimensions.weight}&nbsp;kg
                   </span>
                 </div>
 
-                <div className="p-3.5 bg-white border border-[#E5E2DA] flex flex-col justify-between">
-                  <span className="text-[#63615B] uppercase tracking-wider text-[10px] block">
+                <div className="py-3 border-b border-[#E5E2DA] flex items-center justify-between">
+                  <span className="text-[#63615B] uppercase tracking-wider text-[10px]">
                     Doporučené umístění
                   </span>
-                  <span className="font-medium text-[#121214] mt-1 block">
+                  <span className="font-medium text-[#121214]">
                     {artwork.dimensions.height > 150
                       ? 'Interiér / Zastřešené atrium'
                       : 'Podstavec / Konzole'}
