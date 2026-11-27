@@ -11,7 +11,7 @@ import { ExhibitionsSection } from '@/components/ExhibitionsSection';
 import { BiographySection } from '@/components/BiographySection';
 import { ContactSection } from '@/components/ContactSection';
 import { Artwork, Exhibition, ArtistProfile, SiteSettings, FilterCategory } from '@/types';
-import { ArrowRight, Lock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface GalleryAppProps {
   initialArtworks: Artwork[];
@@ -66,111 +66,112 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      {/* Top Navigation */}
+      {/* Top Navigation (banner landmark) */}
       <Header availableCount={categoryCounts.available} />
 
-      {/* Hero Opening */}
-      {featuredArtwork && (
-        <Hero
-          featuredArtwork={featuredArtwork}
-          onOpenArtwork={handleOpenDetail}
-        />
-      )}
+      {/* Single primary content landmark */}
+      <main className="flex-1">
+        {/* Hero Opening */}
+        {featuredArtwork && (
+          <Hero featuredArtwork={featuredArtwork} onOpenArtwork={handleOpenDetail} />
+        )}
 
-      {/* Portfolio Section */}
-      <section id="dila" className="py-20 border-b border-[#E5E2DA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-              <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
-                Ateliérový katalog
-              </span>
-              <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214] mt-1">
-                Vybrané plastiky & skulptury
-              </h2>
-            </div>
-            <p className="text-sm text-[#666560] max-w-md font-light">
-              Každé dílo je unikátním autorským solitérem. Pro podrobné zkoumání
-              struktury materiálu a video rotace otevřete detail plastiky.
-            </p>
-          </div>
-
-          {/* Hairline Category Bar */}
-          <CategoryFilter
-            activeCategory={activeCategory}
-            onSelectCategory={setActiveCategory}
-            counts={categoryCounts}
-          />
-
-          {/* Artworks Asymmetric Gallery Grid */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {filteredArtworks.map((art) => (
-              <ArtworkCard
-                key={art.id}
-                artwork={art}
-                onOpen={handleOpenDetail}
-                onQuickInquire={(item) => handleStartInquiry(item, 'purchase')}
-              />
-            ))}
-          </div>
-
-          {/* Empty state if no items match filter */}
-          {filteredArtworks.length === 0 && (
-            <div className="py-20 text-center space-y-4">
-              <h3 className="font-serif-sculpture text-xl text-[#121214]">
-                V této kategorii momentálně není žádné volné dílo
-              </h3>
-              <p className="text-sm text-[#666560] max-w-sm mx-auto font-light">
-                Prohlédněte si archiv realizací nebo kontaktujte autora pro konzultaci
-                zakázkové tvorby do konkrétního prostoru.
+        {/* Portfolio Section */}
+        <section id="dila" className="py-20 border-b border-[#E5E2DA]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+              <div>
+                <span className="text-xs uppercase tracking-[0.2em] text-[#63615B] font-mono">
+                  Ateliérový katalog
+                </span>
+                <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214] mt-1">
+                  Vybrané plastiky & skulptury
+                </h2>
+              </div>
+              <p className="text-sm text-[#666560] max-w-md font-light">
+                Každé dílo je unikátním autorským solitérem. Pro podrobné zkoumání
+                struktury materiálu a video rotace otevřete detail plastiky.
               </p>
+            </div>
+
+            {/* Hairline Category Bar */}
+            <CategoryFilter
+              activeCategory={activeCategory}
+              onSelectCategory={setActiveCategory}
+              counts={categoryCounts}
+            />
+
+            {/* Artworks Asymmetric Gallery Grid */}
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {filteredArtworks.map((art) => (
+                <ArtworkCard
+                  key={art.id}
+                  artwork={art}
+                  onOpen={handleOpenDetail}
+                  onQuickInquire={(item) => handleStartInquiry(item, 'purchase')}
+                />
+              ))}
+            </div>
+
+            {/* Empty state if no items match filter */}
+            {filteredArtworks.length === 0 && (
+              <div className="py-20 text-center space-y-4">
+                <h3 className="font-serif-sculpture text-xl text-[#121214]">
+                  V této kategorii momentálně není žádné volné dílo
+                </h3>
+                <p className="text-sm text-[#666560] max-w-sm mx-auto font-light">
+                  Prohlédněte si archiv realizací nebo kontaktujte autora pro konzultaci
+                  zakázkové tvorby do konkrétního prostoru.
+                </p>
+                <button
+                  onClick={() => setActiveCategory('all')}
+                  className="px-6 py-2.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black"
+                >
+                  Zobrazit všechna díla
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Archiv realizací & prestiže (Dedicated Section Anchor) */}
+        <section id="archiv" className="py-16 bg-[#F4F2EE] border-b border-[#E5E2DA]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="p-8 sm:p-10 bg-white border border-[#E5E2DA] flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-2">
+                <span className="text-xs uppercase tracking-widest text-[#63615B] font-mono">
+                  Zastoupení & Sběratelství
+                </span>
+                <h3 className="font-serif-sculpture text-2xl text-[#121214]">
+                  Archiv realizovaných a prodaných plastik
+                </h3>
+                <p className="text-sm text-[#666560] max-w-xl font-light">
+                  Díla umístěná v soukromých i institucionálních sbírkách v Praze,
+                  Vídni a Berlíně. Možnost poptávky autorské variace či nového díla na míru.
+                </p>
+              </div>
+
+              {/* Mobile-safe CTA: text wraps naturally (no whitespace-nowrap) */}
               <button
-                onClick={() => setActiveCategory('all')}
-                className="px-6 py-2.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black"
+                onClick={() => setActiveCategory('sold')}
+                className="px-6 py-3.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black transition-colors flex items-center justify-center gap-2 text-center"
               >
-                Zobrazit všechna díla
+                <span>Filtrovat archiv realizací ({categoryCounts.sold})</span>
+                <ArrowRight className="w-3.5 h-3.5 shrink-0" />
               </button>
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* Archiv realizací & prestiže (Dedicated Section Anchor) */}
-      <section id="archiv" className="py-16 bg-[#F4F2EE] border-b border-[#E5E2DA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="p-8 sm:p-10 bg-white border border-[#E5E2DA] flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-2">
-              <span className="text-xs uppercase tracking-widest text-[#63615B] font-mono">
-                Zastoupení & Sběratelství
-              </span>
-              <h3 className="font-serif-sculpture text-2xl text-[#121214]">
-                Archiv realizovaných a prodaných plastik
-              </h3>
-              <p className="text-sm text-[#666560] max-w-xl font-light">
-                Díla umístěná v soukromých i institucionálních sbírkách v Praze,
-                Vídni a Berlíně. Možnost poptávky autorské variace či nového díla na míru.
-              </p>
-            </div>
-
-            <button
-              onClick={() => setActiveCategory('sold')}
-              className="px-6 py-3.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black transition-colors whitespace-nowrap flex items-center justify-center gap-2"
-            >
-              <span>Filtrovat archiv realizací ({categoryCounts.sold})</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Vernisáže & Výstavy */}
-      <ExhibitionsSection exhibitions={initialExhibitions} />
+        {/* Vernisáže & Výstavy */}
+        <ExhibitionsSection exhibitions={initialExhibitions} />
 
-      {/* Biografie & Manifest */}
-      <BiographySection profile={artistProfile} />
+        {/* Biografie & Manifest */}
+        <BiographySection profile={artistProfile} />
 
-      {/* Ateliér & Kontakt */}
-      <ContactSection settings={siteSettings} />
+        {/* Ateliér & Kontakt */}
+        <ContactSection settings={siteSettings} />
+      </main>
 
       {/* Footer (Zero-Smog Architectural Footer) */}
       <footer className="py-12 bg-[#FAF9F6] border-t border-[#E5E2DA] text-xs text-[#666560]">
@@ -184,7 +185,7 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <a href="#dila" className="hover:text-[#121214] transition-colors">
               Díla
             </a>
@@ -199,17 +200,6 @@ export const GalleryApp: React.FC<GalleryAppProps> = ({
             </a>
             <a href="#kontakt" className="hover:text-[#121214] transition-colors">
               Kontakt
-            </a>
-          </div>
-
-          <div className="flex items-center gap-3 text-[11px] text-[#63615B]">
-            <a
-              href="/keystatic"
-              className="px-3 py-1.5 border border-[#D4D0C5] bg-white text-[#121214] hover:bg-[#121214] hover:text-white transition-all flex items-center gap-1.5 tracking-wider text-[11px] shadow-2xs"
-              title="Přihlásit se do správy obsahu (Keystatic CMS)"
-            >
-              <Lock className="w-3 h-3 text-[#2D4F44]" />
-              <span>Správa obsahu (CMS)</span>
             </a>
           </div>
         </div>

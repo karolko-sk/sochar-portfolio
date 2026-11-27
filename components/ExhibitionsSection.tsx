@@ -8,6 +8,18 @@ interface ExhibitionsSectionProps {
   exhibitions: Exhibition[];
 }
 
+// YYYY-MM-DD -> YYYYMMDD for ICS VALUE=DATE tokens
+const toIcsDate = (d: string): string => d.replace(/-/g, '');
+
+// RFC 5545: DTEND;VALUE=DATE is non-inclusive, so a multi-day exhibition
+// ending on N must be serialized as N + 1 day. UTC math avoids DST shifts.
+const addOneDay = (isoDate: string): string => {
+  const [y, m, d] = isoDate.split('-').map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  dt.setUTCDate(dt.getUTCDate() + 1);
+  return dt.toISOString().split('T')[0];
+};
+
 export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
   exhibitions,
 }) => {
@@ -18,11 +30,12 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
   const past = exhibitions.filter((e) => e.id !== upcoming?.id);
 
   const handleDownloadIcs = (exhibition: Exhibition) => {
-    const cleanDate = (d: string) => d.replace(/-/g, '');
-    const start = cleanDate(exhibition.startDate);
-    const end = cleanDate(exhibition.endDate || exhibition.startDate);
+    const start = toIcsDate(exhibition.startDate);
+    const effectiveEnd = exhibition.endDate || exhibition.startDate;
+    // Single-day events omit DTEND (DTEND == DTSTART would mean a zero-length event).
+    const isSingleDay = effectiveEnd === exhibition.startDate;
 
-    const icsContent = [
+    const icsLines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
       'PRODID:-//Viktor Marek Atelier//Vernisaze//CS',
@@ -32,14 +45,22 @@ export const ExhibitionsSection: React.FC<ExhibitionsSectionProps> = ({
       `UID:exhibition-${exhibition.id}-${Date.now()}@viktormarek.cz`,
       `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
       `DTSTART;VALUE=DATE:${start}`,
-      `DTEND;VALUE=DATE:${end}`,
+    ];
+
+    if (!isSingleDay) {
+      icsLines.push(`DTEND;VALUE=DATE:${toIcsDate(addOneDay(effectiveEnd))}`);
+    }
+
+    icsLines.push(
       `SUMMARY:${exhibition.title} · Výstava MgA. Viktor Marek`,
       `DESCRIPTION:${exhibition.description.replace(/\n/g, ' ')} (Kurátor: ${exhibition.curator})`,
       `LOCATION:${exhibition.venue}, ${exhibition.city}`,
       'STATUS:CONFIRMED',
       'END:VEVENT',
-      'END:VCALENDAR',
-    ].join('\r\n');
+      'END:VCALENDAR'
+    );
+
+    const icsContent = icsLines.join('\r\n');
 
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
