@@ -56,8 +56,17 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
     <div className="group flex flex-col h-full bg-transparent transition-all duration-300">
       {/* Visual Artwork Frame (Zero-Smog: Hairline border only) */}
       <div
+        role="button"
+        tabIndex={0}
+        aria-label={`Detail plastiky: ${artwork.title}`}
         onClick={() => onOpen(artwork)}
-        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onOpen(artwork);
+          }
+        }}
+        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE]"
       >
         <img
           src={artwork.heroImage}
@@ -79,14 +88,14 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
         </div>
 
         {/* Quick View Button: visible on hover AND keyboard focus within the frame */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex items-center justify-center p-4 pointer-events-none">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onOpen(artwork);
             }}
-            className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE] transition-colors"
+            className="pointer-events-auto px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE] transition-colors"
           >
             <Maximize2 className="w-3.5 h-3.5" />
             <span>Detail plastiky</span>
@@ -103,11 +112,14 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
           {getStatusBadge()}
         </div>
 
-        <h3
-          onClick={() => onOpen(artwork)}
-          className="font-serif-sculpture text-xl text-[#121214] group-hover:text-[#666560] transition-colors cursor-pointer line-clamp-1"
-        >
-          {artwork.title}
+        <h3 className="font-serif-sculpture text-xl text-[#121214] line-clamp-1">
+          <button
+            type="button"
+            onClick={() => onOpen(artwork)}
+            className="w-full text-left text-inherit group-hover:text-[#666560] transition-colors cursor-pointer truncate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF9F6]"
+          >
+            {artwork.title}
+          </button>
         </h3>
 
         <p className="text-xs text-[#666560] font-light mt-0.5 line-clamp-1">
