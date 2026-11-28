@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   X,
   Video,
@@ -16,6 +16,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { Artwork } from '@/types';
+import { useDialogFocus } from '@/lib/use-dialog-focus';
 
 interface ArtworkFolioDrawerProps {
   artwork: Artwork | null;
@@ -31,6 +32,16 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isVideoMode, setIsVideoMode] = useState(false);
 
+  // Reset the media showcase whenever the artwork folio (re)opens for a piece
+  useEffect(() => {
+    if (!artwork) return;
+    setSelectedImageIndex(0);
+    setIsVideoMode(false);
+  }, [artwork?.id]);
+
+  // Dialog semantics: initial focus, Escape close, Tab focus trap & restoration
+  const dialogRef = useDialogFocus(artwork !== null, onClose);
+
   if (!artwork) return null;
 
   const images = artwork.galleryImages && artwork.galleryImages.length > 0
@@ -41,15 +52,23 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Dimmed backdrop */}
+      {/* Dimmed backdrop (mouse affordance; keyboard users close via Esc / close button) */}
       <div
         onClick={onClose}
+        aria-hidden="true"
         className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
       />
 
       {/* Slide-Over Drawer Container */}
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
-        <div className="w-screen max-w-2xl bg-[#FAF9F6] border-l border-[#E5E2DA] flex flex-col shadow-2xl relative">
+        <div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="artwork-folio-title"
+          tabIndex={-1}
+          className="w-screen max-w-2xl bg-[#FAF9F6] border-l border-[#E5E2DA] flex flex-col relative focus:outline-none"
+        >
           {/* Header Bar */}
           <div className="px-5 sm:px-6 py-4 border-b border-[#E5E2DA] flex items-center justify-between bg-[#FAF9F6]">
             <div className="flex items-center gap-3">
@@ -62,8 +81,10 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               </span>
             </div>
             <button
+              type="button"
               onClick={onClose}
-              className="p-2 text-[#666560] hover:text-[#121214] hover:bg-[#F4F2EE] transition-colors"
+              aria-label="Zavřít detail plastiky (Esc)"
+              className="p-2 text-[#666560] hover:text-[#121214] hover:bg-[#F4F2EE] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2"
               title="Zavřít detail (Esc)"
             >
               <X className="w-5 h-5" />
@@ -96,6 +117,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 {artwork.videoUrl && (
                   <div className="absolute top-4 right-4 flex items-center bg-black/75 backdrop-blur-md p-1 border border-white/20">
                     <button
+                      type="button"
                       onClick={() => setIsVideoMode(false)}
                       className={`px-2.5 py-1 text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors ${
                         !isVideoMode
@@ -107,6 +129,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                       <span>Fotografie</span>
                     </button>
                     <button
+                      type="button"
                       onClick={() => setIsVideoMode(true)}
                       className={`px-2.5 py-1 text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors ${
                         isVideoMode
@@ -127,7 +150,10 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                   {images.map((img, idx) => (
                     <button
                       key={idx}
+                      type="button"
                       onClick={() => setSelectedImageIndex(idx)}
+                      aria-label={`Zobrazit detail: ${img.label}`}
+                      aria-pressed={selectedImageIndex === idx}
                       className={`relative w-20 h-16 flex-shrink-0 border transition-all overflow-hidden ${
                         selectedImageIndex === idx
                           ? 'border-[#121214] ring-1 ring-[#121214]'
@@ -174,7 +200,10 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                 </span>
               </div>
 
-              <h2 className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214]">
+              <h2
+                id="artwork-folio-title"
+                className="font-serif-sculpture text-3xl sm:text-4xl text-[#121214]"
+              >
                 {artwork.title}
               </h2>
               {artwork.subtitle && (
@@ -320,6 +349,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
             {artwork.status === 'available' ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 <button
+                  type="button"
                   onClick={() => onInquire(artwork, 'purchase')}
                   className="w-full py-3.5 bg-[#121214] text-white text-xs uppercase tracking-wider font-medium hover:bg-black transition-colors flex items-center justify-center gap-2"
                 >
@@ -327,6 +357,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
                 <button
+                  type="button"
                   onClick={() => onInquire(artwork, 'visit')}
                   className="w-full py-3.5 border border-[#D4D0C5] text-[#121214] text-xs uppercase tracking-wider font-medium hover:border-[#121214] transition-colors"
                 >
@@ -335,6 +366,7 @@ export const ArtworkFolioDrawer: React.FC<ArtworkFolioDrawerProps> = ({
               </div>
             ) : (
               <button
+                type="button"
                 onClick={() => onInquire(artwork, 'purchase')}
                 className="w-full py-3.5 border border-[#121214] text-[#121214] text-xs uppercase tracking-wider font-medium hover:bg-[#121214] hover:text-white transition-colors flex items-center justify-center gap-2"
               >

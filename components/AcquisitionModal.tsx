@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X, Check, Mail, ArrowRight } from 'lucide-react';
 import { Artwork } from '@/types';
+import { useDialogFocus } from '@/lib/use-dialog-focus';
 
 interface AcquisitionModalProps {
   artwork: Artwork | null;
@@ -25,6 +26,9 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [generatedMailto, setGeneratedMailto] = useState<string>('');
+
+  // Dialog semantics: initial focus, Escape close, Tab focus trap & restoration
+  const dialogRef = useDialogFocus(artwork !== null, onClose);
 
   if (!artwork) return null;
 
@@ -52,15 +56,23 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 overflow-y-auto">
+      {/* Backdrop (mouse affordance; keyboard users close via Esc / close button) */}
       <div
         onClick={onClose}
+        aria-hidden="true"
         className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
       />
 
-      {/* Modal Surface (Zero-Smog: 1 outer border, clean hairlines) */}
-      <div className="relative bg-[#FAF9F6] border border-[#E5E2DA] max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10">
+      {/* Modal Surface (Zero-Smog: 1 outer border, hairlines only, my-auto scroll-safe) */}
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="acquisition-modal-title"
+        tabIndex={-1}
+        className="relative my-auto bg-[#FAF9F6] border border-[#E5E2DA] max-w-lg w-full p-6 sm:p-8 z-10 focus:outline-none"
+      >
         <button
           type="button"
           onClick={onClose}
@@ -76,7 +88,10 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
             <div className="w-12 h-12 rounded-full bg-[#EBF2EF] text-[#2D4F44] mx-auto flex items-center justify-center border border-[#2D4F44]/20">
               <Check className="w-6 h-6" />
             </div>
-            <h3 className="font-serif-sculpture text-2xl text-[#121214]">
+            <h3
+              id="acquisition-modal-title"
+              className="font-serif-sculpture text-2xl text-[#121214]"
+            >
               Poptávka byla připravena k odeslání
             </h3>
             <p className="text-sm text-[#666560] leading-relaxed max-w-sm mx-auto">
@@ -111,7 +126,10 @@ export const AcquisitionModal: React.FC<AcquisitionModalProps> = ({
               <span className="text-[11px] uppercase tracking-widest text-[#63615B] font-mono">
                 {artwork.code} · Akviziční formulář
               </span>
-              <h3 className="font-serif-sculpture text-2xl text-[#121214] mt-1">
+              <h3
+                id="acquisition-modal-title"
+                className="font-serif-sculpture text-2xl text-[#121214] mt-1"
+              >
                 {artwork.title}
               </h3>
               <p className="text-xs text-[#666560] mt-0.5">

@@ -76,8 +76,17 @@ export const Hero: React.FC<HeroProps> = ({ featuredArtwork, onOpenArtwork }) =>
           {/* Featured Hero Sculpture Showcase */}
           <div className="lg:col-span-6 relative">
             <div
+              role="button"
+              tabIndex={0}
               onClick={() => onOpenArtwork(featuredArtwork)}
-              className="group cursor-pointer block relative bg-[#F4F2EE] border border-[#E5E2DA] overflow-hidden"
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  onOpenArtwork(featuredArtwork);
+                }
+              }}
+              aria-label={`Otevřít technický list plastiky: ${featuredArtwork.title} (${featuredArtwork.code})`}
+              className="group cursor-pointer block relative w-full text-left bg-[#F4F2EE] border border-[#E5E2DA] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF9F6]"
             >
               <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
                 <img
