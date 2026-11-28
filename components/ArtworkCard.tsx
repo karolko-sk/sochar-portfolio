@@ -57,7 +57,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
       {/* Visual Artwork Frame (Zero-Smog: Hairline border only) */}
       <div
         onClick={() => onOpen(artwork)}
-        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] transition-colors cursor-pointer overflow-hidden"
+        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden"
       >
         <img
           src={artwork.heroImage}
@@ -78,14 +78,15 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
           {artwork.code}
         </div>
 
-        {/* Quick View Button on Hover */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+        {/* Quick View Button: visible on hover AND keyboard focus within the frame */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex items-center justify-center p-4">
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               onOpen(artwork);
             }}
-            className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white transition-colors"
+            className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE] transition-colors"
           >
             <Maximize2 className="w-3.5 h-3.5" />
             <span>Detail plastiky</span>
@@ -129,19 +130,36 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
           )}
         </div>
 
+        {/* Human Scale Comparator Reference (180 cm) */}
+        <p className="mt-1.5 flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[#63615B]">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="h-3 w-3 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          >
+            <circle cx="12" cy="4.5" r="2" />
+            <path d="M12 7.5v6M12 13.5l-3.5 7M12 13.5l3.5 7M7.5 9.5h9" />
+          </svg>
+          <span>Měřítko vůči lidské postavě · 180 cm</span>
+        </p>
+
         {/* Dominant Action for the Card - Pushed to bottom */}
         <div className="mt-auto pt-4">
           {artwork.status === 'available' ? (
             <button
               onClick={() => onQuickInquire(artwork)}
-              className="w-full py-2 bg-transparent text-[#121214] border border-[#D4D0C5] text-xs uppercase tracking-wider font-medium hover:bg-[#121214] hover:text-white hover:border-[#121214] transition-all"
+              className="w-full py-2 bg-transparent text-[#121214] border border-[#D4D0C5] text-xs uppercase tracking-wider font-medium hover:bg-[#121214] hover:text-white hover:border-[#121214] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#121214] transition-all"
             >
               Mám zájem o toto dílo
             </button>
           ) : (
             <button
               onClick={() => onOpen(artwork)}
-              className="w-full py-2 bg-transparent text-[#666560] border border-[#E5E2DA] text-xs uppercase tracking-wider hover:border-[#121214] hover:text-[#121214] transition-all"
+              className="w-full py-2 bg-transparent text-[#666560] border border-[#E5E2DA] text-xs uppercase tracking-wider hover:border-[#121214] hover:text-[#121214] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#121214] transition-all"
             >
               Prohlédnout v archivu
             </button>
