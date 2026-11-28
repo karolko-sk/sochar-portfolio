@@ -55,10 +55,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
   return (
     <div className="group flex flex-col h-full bg-transparent transition-all duration-300">
       {/* Visual Artwork Frame (Zero-Smog: Hairline border only) */}
-      <div
-        onClick={() => onOpen(artwork)}
-        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden"
-      >
+      <div className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors overflow-hidden">
         <img
           src={artwork.heroImage}
           alt={artwork.title}
@@ -78,20 +75,18 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
           {artwork.code}
         </div>
 
-        {/* Quick View Button: visible on hover AND keyboard focus within the frame */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity flex items-center justify-center p-4 pointer-events-none">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpen(artwork);
-            }}
-            className="pointer-events-auto px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE] transition-colors"
-          >
-            <Maximize2 className="w-3.5 h-3.5" />
+        {/* Full-frame native button overlay: single interactive control covering image without clickable div or nested buttons */}
+        <button
+          type="button"
+          onClick={() => onOpen(artwork)}
+          aria-label={`Detail plastiky: ${artwork.title}`}
+          className="absolute inset-0 w-full h-full bg-black/0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors flex items-center justify-center p-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#121214]"
+        >
+          <span className="px-4 py-2.5 bg-[#FAF9F6] text-[#121214] border border-[#E5E2DA] text-xs uppercase tracking-wider font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity hover:bg-white">
+            <Maximize2 className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Detail plastiky</span>
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
 
       {/* Typography & Hairline Ledger */}
