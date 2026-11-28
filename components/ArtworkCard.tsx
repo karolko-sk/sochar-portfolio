@@ -56,17 +56,8 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({
     <div className="group flex flex-col h-full bg-transparent transition-all duration-300">
       {/* Visual Artwork Frame (Zero-Smog: Hairline border only) */}
       <div
-        role="button"
-        tabIndex={0}
-        aria-label={`Detail plastiky: ${artwork.title}`}
         onClick={() => onOpen(artwork)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onOpen(artwork);
-          }
-        }}
-        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#121214] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F4F2EE]"
+        className="relative aspect-[3/4] bg-[#F4F2EE] border border-[#E5E2DA] group-hover:border-[#121214] group-focus-within:border-[#121214] transition-colors cursor-pointer overflow-hidden"
       >
         <img
           src={artwork.heroImage}
